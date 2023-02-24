@@ -1,0 +1,932 @@
+
+*{
+margin:0;
+padding:0;
+color:rgb(255,255,255);
+overflow:auto;
+}
+
+a:link { color: rgb(0,180,255) }
+a:visited { color: rgb(0,180,255) }
+
+/*
+    SPApp - Main app Definition
+    The main app is layed out as a Header, Body and Footer Section.
+*/
+.SPApp {
+    min-width : 800px;
+    min-height : 550px;
+    background-color:#ffffff;
+}
+
+/*img {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(...);
+}*/
+
+
+/*
+    Header - The header section contains a series of tabs followed by ink levels with a search bar at the right.
+    Header Section = <div id="head-section" class="head-default">
+    Tabs Section = <div id="tab-section">
+*/
+.head-default
+{
+    width:100%;
+    position:relative;
+    vertical-align:bottom;
+    background-color:#5b5b5b;
+    height: 140px;
+    z-index:2;
+    overflow:visible;
+}
+
+.head-background
+{
+    position:absolute;
+    height:100%;
+    width:100%;
+}
+
+#tab-section 
+{
+    float:right;
+}
+
+.tabs-full
+{
+    text-align:center;
+    position: relative;
+    height: 130px;
+    /*border: 1px solid #0cff00;*/
+    z-index:4;
+}
+
+.tabs-text-full
+{
+	  /*background-color:#ff0000;*/
+    text-align:center;    
+    position: relative;
+    height: 39px;
+    /*border: 1px solid #0cff00;*/
+    z-index:6;
+}
+
+#highlight-main
+{
+    position:absolute;
+    top: 0px;
+    height: 140px;
+    width: 112px;
+    /*border: 1px solid #0cff00;*/
+    z-index:0;
+    visibility:hidden;
+    overflow:visible;
+}
+
+#highlight-image
+{
+    position:absolute;
+    height:100%;
+    width:100%;
+}
+
+.search-div
+{
+    float:left;
+    position: absolute;
+    bottom: 45px;
+    left: 10px;
+    height: 34px;
+    width: 165px;
+    border: 2px solid #b3b4b7;
+    /*margin: 0 0 0 0px;
+    padding: 0 0 0 0;*/
+    overflow:visible;
+    background-color:#FFFFFF;
+    /*background-image:url('./img/search_center.png');*/
+    /*background-repeat:repeat-x;*/
+    z-index:5;
+}
+
+#search-left-bump
+{
+    position:absolute;
+    top: 0px;
+    left: -16px;
+}
+
+#search-right-bump
+{
+    position:absolute;
+    top: 0px;
+    left: 218px;
+}
+
+#highlight-left
+{
+    position:absolute;
+    top: 0px;
+    left:-4px;
+    height:93px;
+    width:4px;
+}
+
+#highlight-right
+{
+    position:absolute;
+    top: 0px;
+    left: 83px;
+    height:93px;
+    width:4px;
+}
+
+#search-button
+{
+    position:absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#search-txtbox
+{
+    position:absolute;
+    top: 10px;
+    right: 34px;  
+    background-color:#FFFFFF;
+    color:#5b5b5b;
+    border: 0;
+    /*border: 1px solid #0cff00;*/
+    height:18px;
+    width:130px;
+    overflow:hidden;
+    font-size: 14px;
+    text-align: right;
+}
+
+#search-drop
+{
+    position:absolute;
+    top: 12px;
+    right: 210px;
+}   
+
+#search-drop-cont
+{
+    position:absolute;
+    top: 35px;
+    left: 0px;
+    color:Black;
+    height:62px;
+    width:215px;
+    overflow:visible;
+}
+
+#drop-center
+{
+    position:absolute;
+    height:100%;
+    width:100%;
+}
+
+#drop-left-bump
+{
+    position:absolute;
+    top: 0px;
+    left: -4px;
+    height:62px;
+    width:4px;
+}
+
+#drop-right-bump
+{
+    position:absolute;
+    top: 0px;
+    right: -4px;
+    height:62px;
+    width:4px;
+}
+
+#drop-local
+{
+    width:215px;
+    height:27px;
+    position:absolute;
+    top:4px;
+    left:0px;
+    background-image:url('./img/highlighted_bar.png');
+    cursor:pointer;
+}
+
+#drop-local-icon
+{
+    position:absolute;
+    top:4px;
+    right:25px;
+}
+
+#drop-local-check
+{
+    position:absolute;
+    top:6px;
+    right:5px;
+}
+
+#drop-local-text
+{
+    position:absolute;
+    top:6px;
+    right:50px; 
+    font-size:14px;
+}
+
+#drop-web-icon
+{
+    position:absolute;
+    top:4px;
+    right:25px;
+}
+
+#drop-web-check
+{
+    position:absolute;
+    top:6px;
+    right:5px;
+}
+
+#drop-web-text
+{
+    position:absolute;
+    top:6px;
+    right:50px; 
+    font-size:14px;
+}
+
+#drop-web
+{
+    width:215px;
+    height:27px;
+    position:absolute;
+    top:31px;
+    left:0px;
+    background-image:url('./img/highlighted_bar.png');
+    cursor:pointer;
+}              
+
+
+/*#option-web
+{
+    position:absolute;
+    top: 35px;
+    left: 130px;
+    color:Black;
+}
+
+#option-local     
+{
+    position:absolute;
+    top: 60px;
+    left: 130px;
+    color:Black;
+}   */
+                
+.table_div
+{
+    float:left;
+    position:relative;
+}
+
+.button_down 
+{
+    color:yellow; 
+    background: navy;
+}
+
+.button_normal
+{
+    color:black; 
+    background: light_gray;
+}
+
+#tab-pointer
+{
+    position:relative;
+    bottom: -90px;
+    right: 0px;
+}
+
+.tab-icon
+{
+    margin-top: 15px;
+    width:55px;
+    height:55px;
+    text-decoration:none;
+    display:block;
+    /*border: 1px solid #ffffff;*/
+    /*background-image:url('./img/ePC_icon.png');*/
+    background-repeat:no-repeat;
+    background-position:0px 0px;
+    z-index:5;
+    
+    cursor:pointer;
+}
+
+.tab-div
+{
+    width:110px;
+    /*border: 1px solid #0cff00;*/
+    text-align: center;
+}
+
+#bars-full-disabled
+{
+    width:150px;
+    height:110px;
+    overflow:visible;
+    /*border-right-width:2px;
+    border-right-color:#404040;
+    border-right-style:solid;
+    border-left-width:2px;
+    border-left-color:#404040;
+    border-left-style:solid;*/
+    
+    overflow:visible;
+}
+
+#bars-full
+{
+	  position:relative;
+    width:150px;
+    height:88px;
+    overflow:visible;
+    /*border: 1px solid #0cff00;*/
+    /*border-right-width:2px;
+    border-right-color:#404040;
+    border-right-style:solid;
+    border-left-width:2px;
+    border-left-color:#404040;
+    border-left-style:solid;*/
+    
+    cursor:pointer;
+    overflow:visible;
+}
+
+#bars-graphic
+{
+    width:124px;
+    height:110px;
+    z-index:5;
+    /*background-color:#663333;*/
+    position:relative;
+    /*border: 1px solid #0cff00;*/
+}
+
+.tab-text
+{
+    position:relative;
+    width:110px;
+    height:45px;
+    display:block;
+    color:#b3b3b3;
+    font-weight: bold;
+    font-size:13px;
+    /*border: 1px solid #0cff00;*/
+    font-family: arial,sans-serif;
+    text-align: center;
+    overflow:visible;
+    z-index:5;
+    
+    cursor:pointer;
+}
+
+.ink-warn-icon
+{
+    position:absolute;
+    left:0;
+    top:30;
+}
+
+.sub-tasks-title-text
+{
+    color:#000000;
+    font-size:24px;
+    margin-top: 26px;
+    vertical-align:bottom;
+    height: 40px;
+    border-bottom: 6px solid #ffffff;
+    text-align: center;
+    font-family: arial,sans-serif;
+    font-weight: bold;
+    
+    cursor:pointer;
+}
+
+.sub-tasks-title-text-selectable
+{
+    color:#000000;
+    font-size:24px;
+    
+    margin-top: 37px;
+    vertical-align:bottom;
+    margin-right: 0px;    
+    text-align: top;
+    font-family: arial,sans-serif;
+    font-weight: bold;
+    
+    cursor:pointer;
+}
+
+#bars-text
+{
+    width:150px;
+    height:22px;
+    display:block;
+    color:#ffffff;
+    font-size:13px;
+    font-weight: bold;
+    font-family: arial,sans-serif;
+    text-align: center;
+    overflow:hidden;
+    margin-top: 3px;
+    /*border: 1px solid #0cff00;*/
+    z-index:5;
+}
+
+#bars-text-disabled
+{
+    width:124px;
+    height:22px;
+    display:block;
+    color:#c0c0c0;
+    font-size:13px;
+    font-weight: bold;
+    font-family: arial,sans-serif;
+    text-align: center;
+    overflow:hidden;
+    z-index:5;
+}
+
+.tab-selected-text
+{
+    position:relative;
+    width:110px;
+    height:45px;
+    display:block;
+    color:#ffffff;
+    font-size:13px;
+    font-family: arial,sans-serif;
+    font-weight: bold;
+    text-align: center;
+    overflow:visible;
+    z-index:5;
+    
+    cursor:pointer;
+}
+
+.large-text-title
+{
+    color:#000000;
+    font-size:24px;
+    margin-top: 37px;
+    border-bottom: 1px solid #b9b8bb;
+    
+    font-family: arial,sans-serif;
+    font-weight: bold;
+    vertical-align:bottom;
+}
+
+.large-text
+{
+    color:#000000;
+    font-size:25px;
+    margin-top: 10px;
+    
+    font-family: Times,"Times New Roman",Georgia,Serif;
+}
+
+.bars-back
+{
+    background-color:#b3b4b7;
+    /*border: 1px solid #0cff00;*/
+    position:absolute;
+    top:4px;
+    left:5px;
+    height:104px;
+    width:25px;
+    overflow:visible;
+}
+
+.bars-color
+{
+    background-color:#ff0000;
+    position:absolute;
+    bottom:3px;
+    left:2px;
+    height:104px;
+    width:19px;
+    overflow:hidden;
+}
+
+.bars-color-grad
+{
+    background-color:#ff0000;
+    position:absolute;
+    bottom:1px;
+    left:2px;
+    height:8px;
+    width:19px;
+    overflow:hidden;
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#000000');*/
+}
+
+.bars-color-white
+{
+    background-color:#ffffff;
+    position:absolute;
+    bottom:1px;
+    right:2px;
+    height:8px;
+    width:19px;
+    overflow:hidden;
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#000000');*/
+}
+
+.bar-seperator-right
+{
+    position:absolute;
+    top:2px;
+    width:2px;
+    height:100px;
+    right:-1px;
+}
+
+.bar-seperator-left
+{
+    position:absolute;
+    top:2px;
+    width:2px;
+    height:100px;
+    left:0px;
+}
+
+/*
+    Body - The body section contains the either the tasks, task catgories, or search results (tasks or external html)
+    Body Section = <div id="body-section" class="body-default" ></div>
+    Contains a task list header section. This is typically the title of the selected tab. Shop, Tools etc.
+    Below the header section is the two column list of tasks or udc links. Tasks have an icon on the left with a task header and decription.
+*/
+.body-default 
+{
+    /* border: 1px solid #000000;*/
+    
+    /*border-bottom: 2px solid #afdfbf;*/
+    /*color: #222222;*/
+    clear : both;
+    padding: 0 0 0 0;
+    width:100%;
+    background-color:#ffffff;
+    color:#000000;
+    overflow:auto;
+    position:relative;
+    z-index:1;
+    text-align: center;
+}
+
+.body-tasklist-header-div, .optin-div
+{
+    width:90%;
+    height: 74px;
+    text-align: right;
+    overflow:hidden;
+    /*border: 1px solid #0cff00;*/
+}
+
+.body-tasklist-header-title-div
+{
+     font-size:14px;
+     font-family: arial,sans-serif;
+     font-weight: bold;
+     /*border: 1px solid #0cff00;*/                                        
+}
+
+.body-tasklist
+{
+    width:90%;
+    text-align: right;
+    border-top: 1px solid #b4b4b4;
+    /*border: 1px solid #0cff00;*/
+} 
+
+.help-coll
+{
+    width:50%;
+    /*border: 1px solid #0cff00;*/
+}
+
+.help-table
+{
+    width:100%;
+    /*border: 1px solid #0cff00;*/
+}
+
+.device-table
+{
+    width:100%;
+    /*border-top: 1px solid #b4b4b4;*/    
+}
+
+.device-coll
+{
+    width:50%;
+}
+
+.device-div
+{
+    height:auto;
+    position:relative;
+    border-width: 1px;
+    border-color: #ffffff;
+    border-style:solid;
+    /*border: 1px solid #0cff00;*/
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-left: 2px;
+    
+    cursor:pointer;
+}
+
+.device-div-highlight
+{
+    height:auto;
+    position:relative;
+    
+    background-image:url('./img/highlighted_center.png');
+    background-repeat:repeat-x;
+    background-color: #e3e6e5;
+    border-width: 1px;
+    border-color: #aaaaaa;
+    border-style:solid;
+    
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-left: 2px;
+    
+    cursor:pointer;
+}
+
+.device-img-container
+{
+	/*border: 1px solid #0cff00;*/
+}
+
+.device-img
+{
+    height:80px;
+    width:65px;
+    margin-left: 10px;
+    /*border: 1px solid #0cff00;*/
+}
+
+.device-text
+{
+}
+
+.device-description, .optin-description
+{
+    color:#505050;
+    font-size:12px;
+    font-family: arial,sans-serif;
+    line-height:12.5px;
+    
+    /*border: 1px solid #0cff00;*/
+    margin-left: 40px;
+    height:60px;
+    overflow:hidden;
+}
+
+.device-title, .optin-title
+{
+    color:#000000;
+    font-size:16px;
+    font-family: arial,sans-serif;
+    font-weight: bold;
+    line-height: 20px;
+    height:23px;
+    overflow:hidden;
+    /*border: 1px solid #0cff00;*/
+}
+
+.task-div-highlight
+{
+    height:auto;
+    position:relative;
+    
+    background-image:url('./img/highlighted_center.png');
+    background-repeat:repeat-x;
+    background-color: #e3e6e5;
+    border-width: 1px;
+    border-color: #aaaaaa;
+    border-style:solid;
+    
+    margin-right: 20px;
+    margin-top: 30px;
+    margin-left: 2px;
+    
+    cursor:pointer;
+}
+
+.task-div
+{
+    height:auto;
+    position:relative;
+    border-width: 1px;
+    border-color: #ffffff;
+    border-style:solid;
+    
+    margin-right: 20px;
+    margin-top: 30px;
+    margin-left: 2px;
+    
+    cursor:pointer;
+}
+
+.task-html
+{
+    height:auto;
+    color:#000000;
+    margin-right: 20px;
+    
+    cursor:pointer;
+}
+
+/*.task-div-ink
+{
+    float:left;
+    height:200px;
+    position:relative;
+    margin-left: 20px;
+    margin-top: 10px;
+    background-color: #333399;
+    overflow:hidden;
+}*/
+
+.task-img
+{
+    height:80px;
+    width:65px;
+    margin-left: 10px;
+}
+
+.task-img-helpsection
+{
+    height:32px;
+    width:32px;
+    margin-left: 10px;
+}
+
+.task-text
+{
+}
+
+.task-description
+{
+    color:#000000;
+    font-size:20px;
+    font-family: arial,sans-serif;
+    
+    height: 33px;
+    overflow:hidden;
+    /*height: 33px;
+    text-overflow: ellipsis;
+    overflow:hidden;*/
+}
+
+.task-title
+{
+    color:#000000;
+    font-size:16px;
+    font-family: arial,sans-serif;
+    
+    height: 23px;
+    overflow: hidden;
+    /*height: 25px;
+    text-overflow: ellipsis;
+    overflow:hidden;*/
+}
+
+.task-title-helpsection
+{
+    color:#0000FF;
+    font-size:17px;
+    font-family: arial,sans-serif;
+    text-decoration: underline;
+    
+    height: 40px;
+    overflow: hidden;
+    /*height: 25px;
+    text-overflow: ellipsis;
+    overflow:hidden;*/
+}
+
+.img_block
+{
+    width:90%;
+    float:none;
+}
+
+.task-block
+{
+    float:none;
+    /*border: 1px solid #0cff00;*/
+}
+
+/*
+    Footer - The footer section contains is normally empty unless we are showing external html which was generated by the search component.
+    Footer Section = <!-- Footer section, populated with external html -->
+                     <div id="footer-section" class="footer-default"></div>
+*/
+.footer-default 
+{
+    /*color: #999;*/
+    margin: 0 0 0 0px;
+    /*width: 1024px;*/
+    height: 0px; /*132px*/
+    clear : both;
+    padding: 0 0 0 0;
+    background-color:#6b6b6b;
+    position:relative;
+    
+    margin-left: auto;
+    margin-right: auto;
+    overflow:hidden;
+}
+
+.checkbox-div
+{
+    height:20px;
+    width:20px;
+    position:relative;
+    border-width: 1px;
+    border-color: #ffffff;
+    border-style:solid;
+    margin-left: 2px;
+    margin-top: 2px;
+    margin-right: 2px;
+    
+    cursor:pointer;
+}
+
+.checkbox-div-highlight
+{
+    height:20px;
+    width:20px;
+    position:relative;
+    
+    border-width: 1px;
+    border-color: #aaaaaa;
+    border-style:solid;
+    
+    margin-left: 2px;
+    margin-top: 2px;
+    margin-right: 2px;
+    
+    cursor:pointer;
+}
+
+.optin-div
+{
+    height: 200px;
+}
+
+.optin-main-title
+{
+    color:#000000;
+    font-size:24px;
+    font-family: arial,sans-serif;
+    font-weight: bold;
+	border-bottom: 1px solid #b9b8bb;
+    margin-top: 26px;
+    vertical-align:bottom;
+    height: 40px;
+    text-align: right;
+}
+
+.optin-tasklist
+{
+    width:90%;
+    text-align: right;
+    /*border: 1px solid #0cff00;*/
+} 
+
+/*#foot_link
+{
+    position:absolute;
+    top: 40px;
+    left: 350px;
+}
+
+#foot_img
+{
+    position:absolute;
+    top: 0px;
+    left: 0px;
+}*/

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <String ID="1"   Value="Quay lại" />
+  <String ID="2"   Value="Tiếp" />
+  <String ID="3"   Value="Trang chủ" />
+  <String ID="4"   Value="In chủ đề này" />
+  <String ID="5"   Value="Tìm kết quả cho" />
+  <String ID="6"   Value="Đánh dấu trang" />
+  <String ID="7"   Value="Tìm kiếm" />
+  <String ID="8"   Value="Nhập thuật ngữ tìm kiếm..." />
+  <String ID="9"   Value="Trình xem" />
+  <String ID="10"  Value="Xem Thêm" />
+  <String ID="11"  Value="Nội dung" />
+  <String ID="12"  Value="Tên Mới" />
+  <String ID="13"  Value="OK" />
+  <String ID="14"  Value="Hủy bỏ" />
+  <String ID="15"  Value="Đóng" />
+  <String ID="16"  Value="Tối đa" />
+  <String ID="17"  Value="Tối thiểu" />
+  <String ID="18"  Value="Làm cách nào Tôi...?" />
+  <String ID="19"  Value="Mở" />
+  <String ID="20"  Value="Xóa" />
+  <String ID="21"  Value="Đổi tên" />
+  <String ID="22"  Value="Đánh dấu trang của Tôi:" />
+  <String ID="23"  Value="Đánh dấu chủ đề" />
+  <String ID="24"  Value="Kết quả cục bộ..." />
+  <String ID="25"  Value="Kết quả trực tuyến..." />
+  <String ID="26"  Value="Kết quả cục bộ và trực tuyến..." />
+  <String ID="27"  Value="HP Help Viewer (Trình xem Trợ giúp HP)" />
+  <String ID="28"  Value="Chào mừng bạn đến HP Help Viewer (Trình xem Trợ giúp HP)." />
+  <String ID="29"  Value="Nhập thuật ngữ tìm kiếm ở trên để tìm trợ giúp cho sản phẩm của bạn." />
+  <String ID="30"  Value="Không thể kết nối với Internet." />
+  <String ID="31"  Value="Không tìm thấy kết quả cho" />
+  <String ID="32"  Value="Mở rộng" />
+  <String ID="33"  Value="Thu hẹp" />
+  <String ID="34"  Value="Khôi phục" />
+  <String ID="35"  Value="Xin đợi một chút..." />
+  <String ID="36"  Value="Các tập tin chỉ mục. Điều này có thể mất một chút thời gian tùy thuộc vào tốc độ hệ thống của bạn." />
+  <String ID="37"  Value="Trợ giúp" />
+  <String ID="38"  Value="Đánh dấu trang đã tồn tại cho mục này. Bạn có muốn ghi đè không?" />
+  <String ID="39"  Value="Bạn có chắc muốn xóa không?" />
+  <String ID="40"  Value="Chọn Tất cả" />
+  <String ID="41"  Value="Xem Nguồn" />
+  <String ID="42"  Value="In..." />
+  <String ID="43"  Value="Làm mới" />
+  <String ID="44"  Value="Thuộc tính" />
+  <String ID="51"  Value="Các tùy chọn tìm kiếm" />
+  <String ID="52"  Value="Thay đổi kích cỡ" />
+  <String ID="53"  Value="Đánh dấu trang có tên này đã tồn tại. Vui lòng chọn một tên khác." />
+  <String ID="54"  Value="In ấn" />
+  <String ID="55"  Value="Cắt" />
+  <String ID="56"  Value="Sao chép" />
+  <String ID="57"  Value="Dán" />
+  <String ID="58"  Value="Xóa" />
+  <String ID="59"  Value="Khởi chạy HP help (trợ giúp HP)" />
+  <String ID="60"  Value="Gồm các kết quả trực tuyến" />
+  <String ID="61"  Value="Nhận trợ giúp cụ thể về sản phẩm để dễ dàng khắc phục sự cố và khắc phục vấn đề." />
+  <String ID="62"  Value="Bạn phải cài đặt Trợ giúp điện tử để xem nội dung Trợ giúp ở đây. Tìm hiểu về sử dụng máy in, các tính năng, khắc phục sự cố, các thông báo, thông tin về môi trường, quy định, và hỗ trợ từ Trợ giúp điện tử." />
+  <String ID="63"  Value="Bạn có thể cài đặt Trợ giúp điện tử từ CD phần mềm HP hoặc trang web hỗ trợ:" />
+  <String ID="64"  Value="Để cài đặt CD phần mềm HP, cho đĩa CD vào, và sau đó bắt đầu cài đặt phần mềm." />
+  <String ID="65"  Value="Để cài đặt từ trang web hỗ trợ, hãy truy cập &lt;a href=&quot;[hub_url]&quot;&gt;hp.com/support&lt;/a&gt;, và sau đó tải về phần mềm “Full Feature Software and Drivers” (Phần mềm và Trình điều khiển Đầy đủ Tính năng)." />
+  <String ID="66"  Value="Khi bạn thấy màn hình liệt kê phần mềm được khuyến nghị, hãy đảm bảo chọn tùy chọn “Trợ giúp [prodName]”." />
+</strings>

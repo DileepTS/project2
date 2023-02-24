@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<bidi:Schema xmlns:bidi="http://schemas.microsoft.com/windows/2010/09/printing/usbbidi">
+  <!--Version 3.0-->
+  <Property name="Printer">
+	
+    <Property name='Status'>
+      <Property name='Summary'>
+        <Value name="StateReason" type="BIDI_STRING" accessType="Get" refreshInterval="5" drvPrinterEvent="true"/>
+      </Property>
+    </Property>
+	
+
+  </Property>
+</bidi:Schema>

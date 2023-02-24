@@ -1,0 +1,2711 @@
+*%===============================================================================*%
+*%                     Copyright (c) Monotype Imaging Inc.                      *%
+*%                            All rights reserved.                              *%
+*%                                                                              *%
+*%          Generated from a UPDF specification using the UPDF Tool.            *%
+*%===============================================================================*%
+
+*GPDFileVersion: "1.1.0302"
+*GPDSpecVersion: "1.0"
+*GPDFileName: "hpit_310_v4.gpd"
+
+*Include: "StdNames.gpd"
+*Include: "msxpsinc.gpd"
+*Include: "locale.gpd"
+*Personality: "PCLXL"
+*Include: "PJL.GPD"
+*Include: "P6DISP.GPD"
+*Include: "P6FONT.GPD"
+*Include: "PCLXL.GPD"
+
+*%==============================================================================*%
+*%                         Auto configuration specific                          *%
+*%==============================================================================*%
+*Ifdef: GDL_ENABLED
+*Include: "hpgid25v4cfg.gdl"
+*Endif: GDL_ENABLED
+*Ifdef: WINNT_60
+*BidiQueryFile: "hpgid25v4cfg.gdl"
+*Endif: WINNT_60
+
+*ModelName: "HP Ink Tank 310 series PCL-3"
+*MasterUnits: PAIR(1200, 1200)
+
+*%==============================================================================*%
+*%                                Engine Speed                                  *%
+*%==============================================================================*%
+*PrintRate: 
+*PrintRateUnit: PPM
+*PrintRatePPM: 
+
+*%==============================================================================*%
+*%                                Printer Type.                                 *%
+*%==============================================================================*%
+*PrinterType: PAGE
+
+*%==============================================================================*%
+*%                               Maximum Copies                                 *%
+*%==============================================================================*%
+*MaxCopies: 9999
+*HardwareCopies: OFF
+*IsXPSDriver?: TRUE
+*OutputOrderReversed?: TRUE
+*PrintSchemaPrivateNamespaceURI: "http://schemas.monotypeimaging.com/ptpc/2006/1"
+
+*%==============================================================================*%
+*%                             Used resource DLLs.                              *%
+*%==============================================================================*%
+*Feature: RESDLL
+{
+	*Name: "resource dll files"
+	*ConcealFromUI?: TRUE
+	*Option: UniresDLL
+	{
+		*Name: "unires.dll"
+	}
+	*Option: mtresDLL
+	{
+		*Name: "hpygidres25.dll"
+	}
+}
+
+*%==============================================================================*%
+*%                                  Includes.                                   *%
+*%==============================================================================*%
+*Include: "hpgid25v4_symbols.gpd"
+*ResourceDLL: "hpygidres25.dll"
+
+*%==============================================================================*%
+*%    Required commands. Must be present or the printer install will fail.      *%
+*%==============================================================================*%
+*Command: CmdCR
+{
+	*Cmd: "<00>"
+}
+
+*Command: CmdLF
+{
+	*Cmd: "<00>"
+}
+
+*Command: CmdFF
+{
+	*Cmd: "<00>"
+}
+
+*Command: CmdSendBlockData
+{
+	*Cmd: "<00>"
+}
+
+*Command: CmdStartJob
+{
+	*Order: JOB_SETUP.1
+	*Cmd: =PJL_STARTJOB
+}
+
+
+*%==============================================================================*%
+*%                        MTI XPS Filter Configuration                          *%
+*%==============================================================================*%
+*Ifdef: MonotypeImagingReserved
+*XpsFilterConfiguration: 
+{
+	*General: 
+	{
+		*Features: 
+		{
+			*PageOrderEnable: TRUE
+			*DocCollateEnable: TRUE
+			*JobCollateEnable: TRUE
+			*JobCopyCountEnable: TRUE
+			*DocCopyCountEnable: TRUE
+			*PageCopyCountEnable: TRUE
+			*NUpEnable: TRUE
+			*WatermarksEnable: TRUE
+			*MtiCoversEnable: TRUE
+			*BookletEnable: TRUE
+			*OverlaysEnable: TRUE
+			*InterleavesEnable: TRUE
+			*PosterEnable: TRUE
+			*ScalingEnable: TRUE
+			*ExceptionsEnable: TRUE
+			*PageRangesEnable: TRUE
+			*BindingShiftEnable: TRUE
+            		*MirrorImageEnable: TRUE
+        }
+        *Options:
+        {
+            *DefaultPaperOffsetsLeft: 300
+            *DefaultPaperOffsetsTop: 300
+            *DefaultPaperOffsetsRight: 300
+            *DefaultPaperOffsetsBottom: 300
+            *DocumentRelationSearchDistance: 7
+            *CollectInsetsEnable: FALSE
+            *ObeyDiscardsEnable: TRUE
+            *CheckZipIntegrityEnable: TRUE
+            *NUpMismatchRotateEnable: TRUE
+            *NUpMismatchRotateAngle: 270
+            *NUpEjectOnNewSizeEnable: FALSE
+            *NUpScaleMediaEnable: FALSE
+            *WmZoomEnable: TRUE
+            *WmZoomClipEnable: TRUE
+            *ErrorPagesEnable: FALSE
+        }
+		*Memory: 
+		{
+			*Scheme: 
+			{
+				*Physical: 0
+				*ManagedArena: 524288
+				*ResourcePool: 80
+				*LanguagePool: 80
+				*GenericPool: 80
+				*Band: 1024
+				*TexturePool: 4096
+				*TextureNodes: 0
+				*ColorNodes: 4096
+				*Input: 4096
+				*Output: 4096
+			}
+			*Scheme: 
+			{
+			   *Physical: 1572864
+			   *ManagedArena: 1048576
+			   *ResourcePool: 80
+			   *LanguagePool: 80
+			   *GenericPool: 80
+			   *Band: 1024
+			   *TexturePool: 4096
+			   *TextureNodes: 0
+			   *ColorNodes: 4096
+			   *Input: 4096
+			   *Output: 4096
+			}
+			*Scheme: 
+			{
+			   *Physical: 2621440
+			   *ManagedArena: 2097152
+			   *ResourcePool: 80
+			   *LanguagePool: 80
+			   *GenericPool: 80
+			   *Band: 1024
+			   *TexturePool: 8192
+			   *TextureNodes: 0
+			   *ColorNodes: 4096
+			   *Input: 4096
+			   *Output: 4096
+			}
+		}
+        *Rendering:
+        {
+            *GlyphRip: "ufst"
+        }
+    }
+}
+*Endif: 
+
+
+*%*************************************************************************************
+*%                            STATIC FEATURES
+*%*************************************************************************************
+
+*%-------------------------------------------------------------------------
+*%                                      HP Generic Ink Driver
+*%-------------------------------------------------------------------------
+*Feature: HPInkDriverType
+{
+	*Name: "HPInkDriverType"
+	*Option: HPStandardInkDriver
+	{
+		*Name: ""
+	}
+}
+
+*%******************************************************************************************
+*%     feature added so that Manual Duplex with multiple copies and collate 
+*%												
+*%******************************************************************************************
+*Feature: ManualDuplex
+{
+  *Name: "ManualDuplex"
+  *MergeCopies?: TRUE
+  *Option: Manual
+  {
+    *Name: ""
+  }
+}
+
+*%-------------------------------------------------------------------------
+*%                                      Printer Protocol
+*%-------------------------------------------------------------------------
+*Feature: DeviceLanguage
+{
+    *Name: "DeviceLanguage"
+	*PrintSchemaKeywordMap: "JobDeviceLanguage"
+    *Option: PCL
+    {
+        *Name: ""
+        *PrintSchemaKeywordMap: "PCL"
+    }
+}
+
+*%-------------------------------------------------------------------------
+*%                                      Driver Version
+*%-------------------------------------------------------------------------
+*Feature: V4Driver
+{
+    *Name: "V4Driver"
+    *Option: V4
+    {
+        *Name: ""
+    }
+}
+
+*%******************************************************************************
+*%                             PageColorManagement
+*%******************************************************************************
+*Feature: PageColorManagement
+{
+    *Name: "Page Color Management"
+    *DefaultOption: None
+    *PrintSchemaKeywordMap: "PageColorManagement"
+
+    *Option: None
+    {
+        *Name: "None"
+        *PrintSchemaKeywordMap: "None"
+    }  
+}
+
+*%---------------------------------------------------------------------------------------------------------------
+*%                                      This feature has to be Uncommented if Manual Duplex is not required
+*%-----------------------------------------------------------------------------------------------------------------
+*%*Feature: HPManualDuplexSupport
+*%{
+*%   *Name: "HPManualDuplexSupport"
+*%   *DefaultOption: OFF  
+
+*%   *Option: OFF
+*%    {
+*%        *Name: ""
+*%    }
+*%}
+
+*%-------------------------------------------------------------------------
+*%                            HP DataCollection XML
+*%-------------------------------------------------------------------------
+*Feature: HPDataCollectionXML
+{
+    *Name: "HPDataCollectionXML"
+    *Option: hpygidDataMap.xml
+    {
+        *Name: ""
+    }
+}
+
+
+*%-------------------------------------------------------------------------
+*%                            HP Imaging DLL
+*%-------------------------------------------------------------------------
+*Feature: HPImagingDll
+{
+    *Name: "HPImagingDll"
+    *Option: hpfime53
+    {
+        *Name: ""
+    }
+}
+
+*%******************************************************************************
+*%                            Application Tracking
+*%******************************************************************************
+*Feature: HPApplicationTracking
+{
+    *Name: "ApplicationName"
+    *Option: AppTracking
+    {
+        *Name: ""
+    }
+}
+
+*%-------------------------------------------------------------------------************
+*%                                     Mech Offset
+*%-------------------------------------------------------------------------************
+*Feature: HPMechOffset
+{
+    *Name: "HPMechOffset"
+    *Option: 140
+     {
+     *Name: "" 
+     }
+}
+
+*%-------------------------------------------------------------------------
+*%                            HP FeedType
+*%-------------------------------------------------------------------------
+*Feature: HPFeedType
+{
+    *Name: "HPFeedType"
+    *Option: HPStraightFeed
+    {
+        *Name: ""
+    }
+}
+
+*%-------------------------------------------------------------------------
+*%                            Speed Mech
+*%-------------------------------------------------------------------------
+*Feature: HPSpeedMech
+{
+    *Name: "HPSpeedMech"
+    *DefaultOption: 2
+    *Option: 2
+    {
+        *Name: "2"
+    }
+}
+
+*%-------------------------------------------------------------------------
+*%                Gutter Value for booklet (calculated as shown below:-
+*%         Gutter value = (Top margin for P15 platform in inches * 2) in microns
+*%                 = .116666*2 *25400 = 5926.755 microns
+*%-------------------------------------------------------------------------
+*Feature: HPBookletGutter
+{
+    *Name: "HPBookletGutter"
+    *Option: 5927
+     {
+     *Name: "" 
+     }
+}
+
+*%-------------------------------------------------------------------------
+*%                             HP Real Life technologies
+*%-------------------------------------------------------------------------
+*Feature: HPRlt
+{
+    *rcNameID: =IDS_HPRLT
+    *DefaultOption: 1
+    *Option: 0
+    {
+        *rcNameID: =IDS_HPRLT_OFF
+    }
+    *Option: 1
+    {
+        *rcNameID: =IDS_HPRLT_ON
+    }
+}
+*%-------------------------------------------------------------------------
+*%                            BigData
+*%-------------------------------------------------------------------------
+
+*Feature: BigData
+{
+    *Name: "BigData"
+	*ConcealFromUI?: TRUE
+	*DefaultOption: ON
+	*Option: ON
+    {
+        *Name: ""
+    }
+    *Option: OFF
+    {
+        *Name: ""
+    }   
+}
+*%*************************************************************************************
+*%                           End of STATIC FEATURES
+*%*************************************************************************************
+*%==============================================================================*%
+*%                               UserResolution                                 *%
+*%==============================================================================*%
+*Feature: UserResolution
+{
+	*rcNameID: =IDS_OUTPUTQUALITY
+	*PrintSchemaKeywordMap: "PageOutputQuality"
+	*DefaultOption: Normal
+	*Option: Draft
+	{
+		*rcNameID: =IDS_OUTPUTQUALITY_DRAFT
+		*PrintSchemaKeywordMap: "Draft"
+	}
+	*Option: Normal
+	{
+		*rcNameID: =IDS_OUTPUTQUALITY_NORMAL
+		*PrintSchemaKeywordMap: "Normal"
+	}
+	*Option: Best
+	{
+		*rcNameID: =IDS_OUTPUTQUALITY_BEST
+		 *PrintSchemaKeywordMap: "High"
+	}
+}
+
+*%==============================================================================*%
+*%                                 Resolution                                   *%
+*%==============================================================================*%
+*Feature: Resolution
+{
+	*rcNameID: =RESOLUTION_DISPLAY
+	*DefaultOption: 600dpi
+	*Option: 300dpi
+	{
+		*rcNameID: =IDS_OUTPUTQUALITY_DRAFT
+		*DPI: PAIR(300, 300)
+		*TextDPI: PAIR(300, 300)
+		*SpotDiameter: 100	
+	}
+	*Option: 600dpi
+	{
+		*rcNameID: =IDS_OUTPUTQUALITY_BEST
+		*DPI: PAIR(600, 600)
+		*TextDPI: PAIR(600, 600)
+		*SpotDiameter: 100
+	}
+	*Option: 1200dpi
+	{
+		*rcNameID: =IDS_MAX_DPI
+		*DPI: PAIR(1200, 1200)
+		*TextDPI: PAIR(1200, 1200)
+		*SpotDiameter: 100
+	}
+}
+
+*%******************************************************************************
+*%                            Manual Duplex
+*%***************************************************************************
+*Feature: HPPrintOnBothSidesManually 
+{
+    *rcNameID: =IDS_DUPLEX_MANUAL_ADV
+    *DefaultOption: OFF
+    *Option: OFF
+    {
+         *rcNameID: =IDS_OFF
+    }
+    *Option: ON
+    {
+        *rcNameID: =IDS_ON
+    }   
+}
+
+*%==============================================================================*%
+*%                               PageOutputColor                                *%
+*%==============================================================================*%
+*Feature: ColorMode
+{
+	 *rcNameID: =IDS_GRAYSCALE	
+	
+	*DefaultOption: ColorOutput
+	*Option: ColorOutput
+	{
+		*rcNameID: =IDS_GRAYSCALE_OFF
+		*PrintSchemaKeywordMap: "Color"
+		*DevBPP: 24
+		*Color?: TRUE
+		*Command: CmdSelect
+		{
+			*Order: JOB_SETUP.101
+			*Cmd: "@PJL SET RENDERMODE=COLOR<0A>"
+		}
+	}
+	*Option: MonoBlackOutput
+	{
+		*rcNameID: =IDS_BLACK_INK_ONLY_WITHOUT_HK
+		*PrintSchemaKeywordMap: "Monochrome"
+		*DevBPP: 8
+		*Color?: FALSE
+		*Command: CmdSelect
+		{
+			*Order: JOB_SETUP.101
+			*Cmd: "@PJL SET GRAYSCALE=BLACKONLY<0A>"
+		}
+	}
+	*Option: MonoCompositeOutput
+	{
+		*rcNameID: =IDS_GRAYSCALE_HIGH_QUALITY
+		*PrintSchemaKeywordMap: "Grayscale"
+		*DevBPP: 8
+		*Color?: FALSE
+		*Command: CmdSelect
+		{
+			*Order: JOB_SETUP.101
+			*Cmd: "@PJL SET GRAYSCALE=COMPOSITE<0A>"
+		}
+	}
+}
+
+*%-------------------------------------------------------------------------
+*%                            PageMediaSize - Paper Size
+*%-------------------------------------------------------------------------
+*Feature: PaperSize
+{
+    *rcNameID: =PAPER_SIZE_DISPLAY
+    *DefaultOption: LETTER
+	*Option: HP_2L_MM
+    {
+       *rcNameID: =IDS_MSIZE_2L_127x178_MM
+       *PageDimensions: PAIR(6000, 8400)
+		*switch: BorderlessPrint
+        {
+            *case: NO
+            {
+				*PrintableArea: PAIR(5720, 8120)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(5860, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+                *PrintableArea: PAIR(6000, 8400)
+                *PrintableOrigin: PAIR(0, 0)
+                *switch: Orientation
+                {
+                    *case: PORTRAIT
+                    {
+                        *CursorOrigin: PAIR(0, 0)
+                    }
+                    *case: LANDSCAPE_CC270
+                    {
+                        *CursorOrigin: PAIR(6000, 0)
+                    }
+                }
+            }
+		}	
+    } 
+	*Option: HP_3_5X5_IN_L_MM 
+    {
+        *rcNameID: =IDS_MSIZE_3_5X5_IN_L_89X127_MM
+         *PageDimensions: PAIR(4204, 6000)
+		*switch: BorderlessPrint
+        {
+            *case: NO
+            {
+				*PrintableArea: PAIR(3924, 5720)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(4064, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+                *PrintableArea: PAIR(4204, 6000)
+                *PrintableOrigin: PAIR(0, 0)
+                *switch: Orientation
+                {
+                    *case: PORTRAIT
+                    {
+                        *CursorOrigin: PAIR(0, 0)
+                    }
+                    *case: LANDSCAPE_CC270
+                    {
+                        *CursorOrigin: PAIR(4204, 0)
+                    }
+                }
+            }
+		}	                      			
+    } 	
+	*Option: HP_3X5_IN
+    {
+        *rcNameID: =IDS_MSIZE_3X5_IN
+        *PageDimensions: PAIR(3600, 6000)
+		*switch: BorderlessPrint
+        {
+            *case: NO
+            {
+				*PrintableArea: PAIR(3320, 5720)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(3460, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+                *PrintableArea: PAIR(3600, 6000)
+                *PrintableOrigin: PAIR(0, 0)
+                *switch: Orientation
+                {
+                    *case: PORTRAIT
+                    {
+                        *CursorOrigin: PAIR(0, 0)
+                    }
+                    *case: LANDSCAPE_CC270
+                    {
+                        *CursorOrigin: PAIR(3600, 0)
+                    }
+                }
+            }
+		}	
+	} 
+	*Option: HP_4X5_IN_10X13_CM
+    {
+        *rcNameID: =IDS_MSIZE_4X5_IN_10X13_CM
+        *PageDimensions: PAIR(4800, 6000)
+		*switch: BorderlessPrint
+        {
+			*case: NO
+            {
+				*PrintableArea: PAIR(4520, 5720)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(4660, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+                *PrintableArea: PAIR(4800, 6000)
+                *PrintableOrigin: PAIR(0, 0)
+                *switch: Orientation
+                {
+                    *case: PORTRAIT
+                    {
+                        *CursorOrigin: PAIR(0, 0)
+                    }
+                    *case: LANDSCAPE_CC270
+                    {
+                        *CursorOrigin: PAIR(4800, 0)
+                    }
+                }
+            }
+		}        				
+    }
+	*Option: HP_4X6_IN_10X15_CM
+    {
+        *rcNameID: =IDS_MSIZE_4X6_IN_10X15_CM
+        *PageDimensions: PAIR(4800, 7200)
+		*switch: BorderlessPrint
+        {
+            *case: NO
+            {
+				*PrintableArea: PAIR(4520, 6920)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(4660, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+                *PrintableArea: PAIR(4800, 7200)
+                *PrintableOrigin: PAIR(0, 0)
+	            *switch: Orientation
+                {
+                    *case: PORTRAIT
+                    {
+                        *CursorOrigin: PAIR(0, 0)
+                    }
+                    *case: LANDSCAPE_CC270
+                    {
+                        *CursorOrigin: PAIR(4800, 0)
+                    }
+                }
+            }
+		}				
+    }
+	*Option: HP_4X12_IN_10X30_CM
+    {
+        *rcNameID: =IDS_MSIZE_4X12_IN_10X30_CM
+        *PageDimensions: PAIR(4800, 14400)
+		*switch: BorderlessPrint
+        {
+         	*case: NO
+            {
+				*PrintableArea: PAIR(4520, 14120)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(4660, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+               *PrintableArea: PAIR(4800, 14400)
+               *PrintableOrigin: PAIR(0, 0)
+               *switch: Orientation
+                {
+                    *case: PORTRAIT
+                    {
+                        *CursorOrigin: PAIR(0, 0)
+                    }
+                    *case: LANDSCAPE_CC270
+                    {
+                        *CursorOrigin: PAIR(4800, 0)
+                    }
+                }
+            }
+		}			
+	}
+	*Option: HP_5X7_IN_13X18_CM
+    {
+        *rcNameID: =IDS_MSIZE_5X7_IN_13X18_CM
+        *PageDimensions: PAIR(6000, 8400)
+		*switch: BorderlessPrint
+        {
+            *case: NO
+            {
+				*PrintableArea: PAIR(5720, 8120)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(5860, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+                *PrintableArea: PAIR(6000, 8400)
+               	*PrintableOrigin: PAIR(0, 0)
+                *switch: Orientation
+                {
+                  	*case: PORTRAIT
+                    {
+                        *CursorOrigin: PAIR(0, 0)
+                    }
+                    	*case: LANDSCAPE_CC270
+                    {
+                        *CursorOrigin: PAIR(6000, 0)
+                    }
+                }
+            }
+		}			
+    }
+	*Option: ENV_PERSONAL
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PageDimensions: PAIR(4356, 7800)
+		*PrintableArea: PAIR(4076, 7520)
+		*PrintableOrigin: PAIR(140, 140)
+		*switch: Orientation
+		{
+			*case: PORTRAIT
+			{
+				*CursorOrigin: PAIR(140, 140)
+			}
+			*case: LANDSCAPE_CC270
+			{
+				*CursorOrigin: PAIR(4216, 140)
+			}
+		}
+	}
+	*Option: HP_8_5X13_IN
+    {
+        *rcNameID: =IDS_MSIZE_8_5X13_IN
+        *PageDimensions: PAIR(10200, 15600)
+		*PrintableArea: PAIR(9920, 15320)
+		*PrintableOrigin: PAIR(140, 140)
+		*switch: Orientation
+		{
+			*case: PORTRAIT
+			{
+				*CursorOrigin: PAIR(140, 140)
+			}
+			*case: LANDSCAPE_CC270
+			{
+				*CursorOrigin: PAIR(10060, 140)
+			}
+		}
+	}
+	*Option: HP_8X10_IN
+    {
+        *rcNameID: =IDS_MSIZE_8X10_IN
+        *PageDimensions: PAIR(9600, 12000)
+        *switch: BorderlessPrint
+        {
+            *case: NO
+            {
+				*PrintableArea: PAIR(9320, 11720)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(9460, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+             	*PrintableArea: PAIR(9600, 12000)
+                *PrintableOrigin: PAIR(0, 0)
+                *switch: Orientation
+                {
+                 	*case: PORTRAIT
+                    {
+                     	*CursorOrigin: PAIR(0, 0)
+                    }	
+					*case: LANDSCAPE_CC270
+                    {
+                        *CursorOrigin: PAIR(9600, 0)
+                    }
+                }
+            }
+		}							
+    }
+	*Option: A4
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PageDimensions: PAIR(9921, 14031)
+		*switch: BorderlessPrint
+        {
+            *case: NO
+            {
+				*PrintableArea: PAIR(9641, 13751)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(9781, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+                *PrintableArea: PAIR(9921, 14031)
+                *PrintableOrigin: PAIR(0, 0)
+                *switch: Orientation
+                {
+                    *case: PORTRAIT
+                    {
+                        *CursorOrigin: PAIR(0, 0)
+                    }
+                    *case: LANDSCAPE_CC270
+                    {
+                        *CursorOrigin: PAIR(9921, 0)
+                    }
+                }
+           	}
+		}
+	}
+	*Option: A5
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PageDimensions: PAIR(6992, 9921)
+		*switch: BorderlessPrint
+        {
+            *case: NO
+            {
+				*PrintableArea: PAIR(6712, 9641)
+    			*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(6852, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+             	*PrintableArea: PAIR(6992, 9921)
+                *PrintableOrigin: PAIR(0, 0)
+                *switch: Orientation
+                {
+                    *case: PORTRAIT
+                    {
+                        *CursorOrigin: PAIR(0, 0)
+                    }
+                    *case: LANDSCAPE_CC270	
+					{
+                        *CursorOrigin: PAIR(6992, 0)
+                    }
+                }
+            }
+		}								
+    }        
+	*Option: A6
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PageDimensions: PAIR(4960, 6992)
+		*switch: BorderlessPrint
+        {
+            *case: NO
+            {
+				*PrintableArea: PAIR(4680, 6712)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(4820, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+			{
+				*PrintableArea: PAIR(4960, 6992)
+				*PrintableOrigin: PAIR(0, 0)
+				*switch: Orientation
+				{
+					*case: PORTRAIT	
+					{
+						*CursorOrigin: PAIR(0, 0)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(4960, 0)
+					}
+				}
+			}
+		}				
+	}
+	*Option: HP_B5_ISO_176X250_MM
+    {
+        *rcNameID: =IDS_MSIZE_B5_ISO_176X250_MM_1
+        *PageDimensions: PAIR(8315, 11811)
+		*PrintableArea: PAIR(8035, 11531)
+		*PrintableOrigin: PAIR(140, 140)
+		*switch: Orientation
+        {
+            *case: PORTRAIT
+            {
+                *CursorOrigin: PAIR(140, 140)
+            }
+            *case: LANDSCAPE_CC270
+            {
+                *CursorOrigin: PAIR(8175, 140)
+            }
+        }
+    } 
+	*Option: B5
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PageDimensions: PAIR(8598, 12141)
+		*switch: BorderlessPrint
+		{
+			*case: NO
+			{
+				*PrintableArea: PAIR(8318, 11861)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(8458, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+			{
+				*PrintableArea: PAIR(8598, 12141)
+				*PrintableOrigin: PAIR(0, 0)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(0, 0)
+					}
+					 *case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(8598, 0)
+					}
+				}
+			}
+			
+		}
+    } 
+	*Option: CUSTOMSIZE
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *MinSize: PAIR(3600, 6000)
+        *MaxSize: PAIR(10200, 16800)
+        *MaxPrintableWidth: 10200
+        *CenterPrintable?: TRUE
+		*switch: BorderlessPrint
+        {	
+			*case: NO
+            {
+				*CustPrintableOriginX: %d{140}
+        		*CustPrintableOriginY: %d{140}
+         		*CustPrintableSizeX: %d{PhysPaperWidth-280}
+         		*CustPrintableSizeY: %d{PhysPaperLength-280}
+				*switch: Orientation
+        		{
+        			*case: PORTRAIT
+					{
+                		*CustCursorOriginX: %d{140}
+                		*CustCursorOriginY: %d{140}
+					}
+					*case: LANDSCAPE_CC270
+					{
+                		*CustCursorOriginX: %d{PhysPaperWidth-140}
+                		*CustCursorOriginY: %d{140}
+					}
+        		}
+			}
+			*case: BorderlessOverspray
+            {
+                *CustPrintableOriginX: %d{0}
+				*CustPrintableOriginY: %d{0}
+				*CustPrintableSizeX: %d{PhysPaperWidth}
+				*CustPrintableSizeY: %d{PhysPaperLength}
+                *switch: Orientation
+        		{
+        			*case: PORTRAIT
+					{
+                		*CustCursorOriginX: %d{0}
+                		*CustCursorOriginY: %d{0}
+					}
+					*case: LANDSCAPE_CC270
+					{
+                		*CustCursorOriginX: %d{PhysPaperWidth}
+                		*CustCursorOriginY: %d{0}
+					}
+				}	
+			}
+        }
+    }
+	*Option: ENV_10
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PageDimensions: PAIR(4956, 11400)
+		*PrintableArea: PAIR(4676, 11120)
+  		*PrintableOrigin: PAIR(140, 140)
+		*switch: Orientation
+		{
+			*case: PORTRAIT
+			{
+				*CursorOrigin: PAIR(140, 140)
+			}
+			*case: LANDSCAPE_CC270
+			{
+				*CursorOrigin: PAIR(4816, 140)
+			}
+		}
+	}
+	*Option: HP_ENV_A2
+    {
+        *rcNameID: =IDS_MSIZE_ENV_A2_111X146_MM
+        *PageDimensions: PAIR(5244, 6897)
+		*PrintableArea: PAIR(4964, 6617)
+  		*PrintableOrigin: PAIR(140, 140)
+		*switch: Orientation
+		{
+			*case: PORTRAIT
+			{
+				*CursorOrigin: PAIR(140, 140)
+			}
+			*case: LANDSCAPE_CC270
+			{
+				*CursorOrigin: PAIR(5104, 140)
+			}
+		}
+	}
+	*Option: ENV_C5
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PageDimensions: PAIR(7653, 10818)
+		*PrintableArea: PAIR(7373, 10538)
+  		*PrintableOrigin: PAIR(140, 140)
+		*switch: Orientation
+		{
+			*case: PORTRAIT
+			{
+				*CursorOrigin: PAIR(140, 140)
+			}
+			*case: LANDSCAPE_CC270
+			{
+				*CursorOrigin: PAIR(7513,140)
+			}
+		}
+	}
+	*Option: ENV_C6
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PageDimensions: PAIR(5385, 7653)
+		*PrintableArea: PAIR(5105, 7373)
+  		*PrintableOrigin: PAIR(140,140)
+		*switch: Orientation
+		{
+			*case: PORTRAIT
+			{
+				*CursorOrigin: PAIR(140, 140)
+			}
+			*case: LANDSCAPE_CC270
+			{
+				*CursorOrigin: PAIR(5245, 140)
+			}
+		}
+	}
+	*Option: ENV_DL
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PageDimensions: PAIR(5196, 10393)
+		*PrintableArea: PAIR(4916, 10113)
+  		*PrintableOrigin: PAIR(140, 140)
+
+		*switch: Orientation
+		{
+			*case: PORTRAIT
+			{
+				*CursorOrigin: PAIR(140, 140)
+			}
+			*case: LANDSCAPE_CC270
+			{
+				*CursorOrigin: PAIR(5056, 140)
+			}
+		}
+	}
+	*Option: ENV_MONARCH
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PageDimensions: PAIR(4656, 9000)
+		*PrintableArea: PAIR(4376, 8720)
+  		*PrintableOrigin: PAIR(140,140)
+		*switch: Orientation
+		{
+			*case: PORTRAIT
+			{
+				*CursorOrigin: PAIR(140,140)
+			}
+			*case: LANDSCAPE_CC270
+			{
+				*CursorOrigin: PAIR(4516,140)
+			}
+		}
+	}
+	*Option: EXECUTIVE
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PageDimensions: PAIR(8700, 12600)
+		*PrintableArea: PAIR(8420,12320)
+		*PrintableOrigin: PAIR(140, 140)
+		*switch: Orientation
+		{
+			*case: PORTRAIT
+			{
+				*CursorOrigin: PAIR(140, 140)
+			}
+			*case: LANDSCAPE_CC270
+			{
+				*CursorOrigin: PAIR(8560, 140)
+			}
+		}
+    }
+	*Option: HP_INDEX_CARD_3X5_IN
+    {
+        *rcNameID: =IDS_MSIZE_INDEX_CARD_3X5_IN
+        *PageDimensions: PAIR(3600, 6000)
+        *PrintableArea: PAIR(3320,5720)
+  		*PrintableOrigin: PAIR(140, 140)
+		*switch: BorderlessPrint
+        {
+          	*case: NO
+            {
+				*PrintableArea: PAIR(3320, 5720)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(3460, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+             	*PrintableArea: PAIR(3600, 6000)
+                *PrintableOrigin: PAIR(0, 0)
+	            *switch: Orientation
+                {
+                 	*case: PORTRAIT
+                   	{
+                      	*CursorOrigin: PAIR(0, 0)
+                    }
+                    *case: LANDSCAPE_CC270
+                    {
+                     	*CursorOrigin: PAIR(3600, 0)
+                    }
+                }
+            }
+		}
+	}
+	*Option: HP_INDEX_CARD_4X6_IN
+    {
+        *rcNameID: =IDS_MSIZE_INDEX_CARD_4X6_IN
+        *PageDimensions: PAIR(4800, 7200)
+	    *switch: BorderlessPrint
+        {
+            *case: NO
+            {
+				*PrintableArea: PAIR(4520, 6920)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(4660, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+             	*PrintableArea: PAIR(4800, 7200)
+                *PrintableOrigin: PAIR(0, 0)
+                *switch: Orientation
+               	{
+                	*case: PORTRAIT
+                    {
+                        *CursorOrigin: PAIR(0, 0)
+                    }
+                    *case: LANDSCAPE_CC270
+                    {
+                        *CursorOrigin: PAIR(4800, 0)
+                    }
+                }
+            }
+		}				
+	}
+	*Option: HP_INDEX_CARD_5X8_IN
+    {
+        *rcNameID: =IDS_MSIZE_INDEX_CARD_5X8_IN
+        *PageDimensions: PAIR(6000, 9600)
+		*switch: BorderlessPrint
+        {
+          	*case: NO
+            {
+				*PrintableArea: PAIR(5720, 9320)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(5860, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+             	*PrintableArea: PAIR(6000, 9600)
+                *PrintableOrigin: PAIR(0, 0)
+	            *switch: Orientation
+                {
+                 	*case: PORTRAIT
+                   	{
+                      	*CursorOrigin: PAIR(0, 0)
+                    }
+                    *case: LANDSCAPE_CC270
+                    {
+                     	*CursorOrigin: PAIR(6000, 0)
+                    }
+                }
+            }
+		}
+	}  
+	*Option: HP_INDEX_CARD_A4
+    { 
+		*rcNameID: =IDS_MSIZE_INDX_CARD_A4_8_27x11
+        *PageDimensions: PAIR(9921, 14031)
+		 *switch: BorderlessPrint
+        {
+          	*case: NO
+            {
+				*PrintableArea: PAIR(9641, 13751)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(9781, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+             	*PrintableArea: PAIR(9921, 14031)
+                *PrintableOrigin: PAIR(0, 0)
+	            *switch: Orientation
+                {
+                 	*case: PORTRAIT
+                   	{
+                      	*CursorOrigin: PAIR(0, 0)
+                    }
+                    *case: LANDSCAPE_CC270
+                    {
+                     	*CursorOrigin: PAIR(9921, 0)
+                    }
+                }
+            }
+		}
+	}
+	*Option: HP_INDEX_CARD_LETTER
+    {
+		*rcNameID: =IDS_MSIZE_INDX_CARD_LETTER_8_5x11
+        *PageDimensions: PAIR(10200, 13200)
+		*switch: BorderlessPrint
+        {
+          	*case: NO
+            {
+				*PrintableArea: PAIR(9920, 12920)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(10060, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+             	*PrintableArea: PAIR(10200, 13200)
+                *PrintableOrigin: PAIR(0, 0)
+                *switch: Orientation
+                {
+                 	*case: PORTRAIT
+                   	{
+                      	*CursorOrigin: PAIR(0, 0)
+                    }
+                    *case: LANDSCAPE_CC270
+                    {
+                     	*CursorOrigin: PAIR(10200, 0)
+                    }
+                }
+            }
+		}
+	}
+	*Option: JENV_CHOU3
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PageDimensions: PAIR(5669, 11102)
+		*PrintableArea: PAIR(5389,10822)
+  		*PrintableOrigin: PAIR(140,140)
+		*switch: Orientation
+		{
+			*case: PORTRAIT
+			{
+				*CursorOrigin: PAIR(140,140)
+			}
+			*case: LANDSCAPE_CC270
+			{
+				*CursorOrigin: PAIR(5529,140)
+			}
+		
+		}
+    }		
+	*Option: JENV_CHOU4
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PageDimensions: PAIR(4251,9685)
+		*PrintableArea: PAIR(3971,9405)
+  		*PrintableOrigin: PAIR(140,140)
+		*switch: Orientation
+		{
+			*case: PORTRAIT
+			{
+				*CursorOrigin: PAIR(140,140)
+			}
+			*case: LANDSCAPE_CC270
+			{
+				*CursorOrigin: PAIR(4111,140)
+			}
+		}
+    }
+	*Option: JAPANESE_POSTCARD
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PageDimensions: PAIR(4728, 6992)
+		*switch: BorderlessPrint
+        {	
+			*case: NO
+            {
+				*PrintableArea: PAIR(4448, 6712)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(4588, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+                *PrintableArea: PAIR(4728, 6992)	
+				*PrintableOrigin: PAIR(0, 0)
+                *switch: Orientation
+                {
+                    *case: PORTRAIT
+                    {
+                        *CursorOrigin: PAIR(0, 0)
+                    }
+                   	*case: LANDSCAPE_CC270
+                    {
+                        *CursorOrigin: PAIR(4728, 0)
+                    }
+                }
+            }
+		}			
+				
+    }
+	*Option: LEGAL
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PageDimensions: PAIR(10200, 16800)
+		*PrintableArea: PAIR(9920,  16520)
+		*PrintableOrigin: PAIR(140, 140)
+		*switch: Orientation
+		{
+			*case: PORTRAIT
+			{
+				*CursorOrigin: PAIR(140, 140)
+			}
+			*case: LANDSCAPE_CC270
+			{
+				*CursorOrigin: PAIR(10060, 140)
+			}
+		}
+    }
+	*Option: LETTER
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PageDimensions: PAIR(10200, 13200)
+		*switch: BorderlessPrint
+        {
+            *case: NO
+            {
+				*PrintableArea: PAIR(9920,12920)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(10060, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+                *PrintableArea: PAIR(10200, 13200)
+                *PrintableOrigin: PAIR(0, 0)
+                *switch: Orientation
+                {
+                   	*case: PORTRAIT
+                    {
+                        *CursorOrigin: PAIR(0, 0)
+                    }
+                    *case: LANDSCAPE_CC270
+                    {
+                        *CursorOrigin: PAIR(10200, 0)
+                    }
+                }
+            }
+		}
+	} 
+	*Option: HP_OFUKU_HAGAKI_200X148_MM
+    {
+        *rcNameID: =IDS_MSIZE_OFUKU_HAGAKI_200X148_MM_1
+        *PageDimensions: PAIR(9448, 6992)
+       	*switch: BorderlessPrint
+        {	
+			*case: NO
+            {
+				*PrintableArea: PAIR(9168, 6712)
+				*PrintableOrigin: PAIR(140, 140)
+				*switch: Orientation
+				{
+					*case: PORTRAIT
+					{
+						*CursorOrigin: PAIR(140, 140)
+					}
+					*case: LANDSCAPE_CC270
+					{
+						*CursorOrigin: PAIR(9308, 140)
+					}
+				}
+			}
+			*case: BorderlessOverspray
+            {
+                *PrintableArea: PAIR(9448, 6992)	
+				*PrintableOrigin: PAIR(0, 0)
+                *switch: Orientation
+                {
+                    *case: PORTRAIT
+                    {
+                        *CursorOrigin: PAIR(0, 0)
+                    }
+                    *case: LANDSCAPE_CC270
+                    {
+                        *CursorOrigin: PAIR(9448, 0)
+                    }
+                }
+            }
+		}			
+    }		
+	*Option: STATEMENT
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PageDimensions: PAIR(6600, 10200)
+		*PrintableArea: PAIR(6320, 9920)
+  		*PrintableOrigin: PAIR(140, 140)
+		*switch: Orientation
+		{
+			*case: PORTRAIT
+			{
+				*CursorOrigin: PAIR(140, 140)
+			}
+			*case: LANDSCAPE_CC270
+			{
+				*CursorOrigin: PAIR(6460, 140)
+			}
+		}
+	}	
+}	
+
+*%-------------------------------------------------------------------------
+*%                             Media Type
+*%-------------------------------------------------------------------------
+*Feature: MediaType
+{
+    *rcNameID: =MEDIA_TYPE_DISPLAY
+    *DefaultOption: 0.1004.0000_0_600x600
+   	
+    *Option: 0.1004.0000_0_600x600
+    {
+        *rcNameID: =IDS_MTYPE_PLAIN_PAPER
+    }
+	*Option: 5.1069.0000_0_600x600
+    {
+         *rcNameID: =IDS_MTYPE_HP_PHOTO_PAPERS
+    } 
+	*Option: 2.1077.0000_0_600x600
+    {
+         *rcNameID: =IDS_MTYPE_HP_MATTE_BROCHURE_OR_PROF_PPR
+    }
+    	*Option: 2.1005.0000_0_600x600
+    {
+         *rcNameID: =IDS_MTYPE_MATTE_PRESENTATION_PAPER
+    }
+    	*Option: 8.1076.0000_0_600x600
+    {
+        *rcNameID: =IDS_MTYPE_HP_GLOSSY_BROCHURE_OR_PROF_PPR
+    }
+	*Option: 5.1045.0000_0_600x600
+    {
+        *rcNameID: =IDS_MTYPE_OTHER_PHOTO_INK_JET_PAPERS		
+    }
+	*Option: 2.1077.0000_1_600x600
+    {
+         *rcNameID: =IDS_MTYPE_OTHER_MATTE_INK_JET_PAPERS
+    }
+	*Option: 8.1054.0000_0_600x600
+    {
+        *rcNameID: =IDS_MTYPE_OTHER_GLOSSY_INK_JET_PAPERS
+    }
+}
+
+*%==============================================================================*%
+*%                              Media Input Trays                               *%
+*%==============================================================================*%
+*Feature: InputBin
+{
+	*rcNameID: =PAPER_SOURCE_DISPLAY
+	*DefaultOption: 1
+	*Option: 1
+	{
+		*rcNameID: =IDS_INPUTBIN_MAINTRAY
+	}
+}
+
+*%==============================================================================*%
+*%                                    Sides                                     *%
+*%==============================================================================*%
+*Feature: Duplex
+{
+	*rcNameID: =TWO_SIDED_PRINTING_DISPLAY
+	*DefaultOption: NONE
+	*Option: NONE
+	{
+		*rcNameID: =IDS_HPBOOKLET_NONE		
+	}
+	*Option: VERTICAL
+	{
+		*rcNameID: =IDS_PS_FLIP_LONGEDGE
+	}
+	*Option: HORIZONTAL
+	{
+		*rcNameID: =IDS_PS_FLIP_SHORTEDGE
+	}
+}
+
+*%==============================================================================*%
+*%                                JobFlipPageUp                                 *%
+*%==============================================================================*%
+*Feature: JobFlipPageUp
+{
+	*rcNameID: =IDS_CHK_FLIP_UP_SUI
+	*DefaultOption: false
+	*ConcealFromUI?: TRUE
+	*Option: false
+	{
+		*rcNameID: =IDS_OFF
+	}
+	*Option: true
+	{
+		*rcNameID: =IDS_ON
+	}
+}
+
+*%==============================================================================*%
+*%                                     Nup                                      *%
+*%==============================================================================*%
+*Feature: DocumentNUp
+{
+	*rcNameID: =IDS_NUP
+	*PrintSchemaKeywordMap: "DocumentNUp"
+	*DefaultOption: 1
+	*Option: 1
+	{
+		*rcNameID: =IDS_1UP
+	}
+	*Option: 2
+	{
+		*rcNameID: =IDS_2UP
+	}
+	*Option: 4
+	{
+		*rcNameID: =IDS_4UP
+	}
+	*Option: 6
+	{
+		*rcNameID: =IDS_6UP
+	}
+	*Option: 9
+	{
+		*rcNameID: =IDS_9UP
+	}
+	*Option: 16
+	{
+		*rcNameID: =IDS_16UP
+	}
+}
+
+*%==============================================================================*%
+*%                                 NUp Borders                                  *%
+*%==============================================================================*%
+*Feature: NUpBorders
+{
+	*rcNameID: =IDS_PAGEBORDERS
+	*DefaultOption: Off
+	*ConcealFromUI?: TRUE
+	*Option: Off
+	{
+		*rcNameID: =IDS_OFF
+	}
+	*Option: On
+	{
+		*rcNameID: =IDS_ON
+	}
+}
+
+*%==============================================================================*%
+*%                          NUp PresentationDirection                           *%
+*%==============================================================================*%
+*Feature: PresentationDirection
+{
+	*rcNameID: =IDS_PAGESPERSHEET_LAYOUT
+	*DefaultOption: RightBottom
+	*ConcealFromUI?: TRUE
+	*Option: RightBottom
+	{
+		*rcNameID: =IDS_RIGHT_DOWN
+		*PrintSchemaKeywordMap: "RightBottom"
+	}
+	*Option: BottomRight
+	{
+		*rcNameID: =IDS_DOWN_RIGHT
+		*PrintSchemaKeywordMap: "BottomRight"
+	}
+	*Option: LeftBottom
+	{
+		*rcNameID: =IDS_LEFT_DOWN
+		*PrintSchemaKeywordMap: "LeftBottom"
+	}
+	*Option: BottomLeft
+	{
+		*rcNameID: =IDS_DOWN_LEFT
+		*PrintSchemaKeywordMap: "BottomLeft"
+	}
+}
+
+*%==============================================================================*%
+*%                                  Collation                                   *%
+*%==============================================================================*%
+*Feature: Collate
+{
+	*rcNameID: =COLLATE
+	*DefaultOption: ON
+	*Option: OFF
+	{
+		*rcNameID: =OFF_DISPLAY
+	}
+	*Option: ON
+	{
+		*rcNameID: =ON_DISPLAY
+	}
+}
+
+*%==============================================================================*%
+*%                                Orientations                                  *%
+*%==============================================================================*%
+*Feature: Orientation
+{
+	*rcNameID: =ORIENTATION_DISPLAY
+	*DefaultOption: PORTRAIT
+	*Option: PORTRAIT
+	{
+		*rcNameID: =PORTRAIT_DISPLAY
+	}
+	*Option: LANDSCAPE_CC270
+	{
+		*rcNameID: =LANDSCAPE_DISPLAY
+	}
+}
+
+*%==============================================================================*%
+*%                                JobPageOrder                                  *%
+*%==============================================================================*%
+*Feature: JobPageOrder
+{
+	*rcNameID: =IDS_REVERSE_PAGE_ORDER	
+	*PrintSchemaKeywordMap: "JobPageOrder"
+	*DefaultOption: Standard
+	*Option: Standard
+	{
+		*Name: "Front to Back"
+		*PrintSchemaKeywordMap: "Reverse"
+	}
+	*Option: Reverse
+	{
+		*Name: "Back to Front"
+		*PrintSchemaKeywordMap: "Standard"
+	}
+	
+}
+
+*%==============================================================================*%
+*%                          DuplexUnit (Installable)                            *%
+*%==============================================================================*%
+*Feature: DuplexUnit
+{
+	*ConflictPriority: 3
+	*rcNameID: =IDS_AUTODUPLEXUNIT
+	*FeatureType: PRINTER_PROPERTY
+	*Option: NotInstalled
+	{
+		*rcNameID: =IDS_AUTODUPLEXUNIT_NOT_INSTALLED
+	}
+}
+
+*%-------------------------------------------------------------------------
+*%                            Pages to print
+*%-------------------------------------------------------------------------
+*Feature: DocumentPageRanges
+{
+    *rcNameID: =IDS_PAGES_TO_PRINT
+    *DefaultOption: AllPages
+    *Option: AllPages
+    {
+        *rcNameID: =IDS_PRINT_ALL_PAGES
+	}
+    *Option: OddPages
+    {
+        *rcNameID: =IDS_PRINT_ODD_PAGES_ONLY
+    }
+    *Option: EvenPages
+    {
+        *rcNameID: =IDS_PRINT_EVEN_PAGES_ONLY
+    }
+}
+
+*%-------------------------------------------------------------------------
+*%                              Borderless Printing
+*%-------------------------------------------------------------------------
+*Feature: BorderlessPrint
+{
+     *rcNameID: =IDS_BORDERLESSPRINTING
+    *DefaultOption: NO
+    *PrintSchemaKeywordMap: "PageBorderless"
+    *Option: NO
+    {
+       *rcNameID: =IDS_OFF
+        *PrintSchemaKeywordMap: "None"
+    }
+    *Option: BorderlessOverspray
+    {
+       *rcNameID: =IDS_ON
+	   *PrintSchemaKeywordMap: "Borderless"
+    }
+}
+
+*%==============================================================================*%
+*%                                 GUIStrings                                   *%
+*%==============================================================================*%
+*Feature: GUIStrings
+{
+	*Name: "GUIStrings"
+	*ConcealFromUI?: TRUE
+	*Option: IDS_USE_PAPER_SIZE
+	{
+		*Name: "Use Paper Size Setting"
+	}
+}
+
+*%******************************************************************************
+*%                            General Everyday Printing settings
+*%******************************************************************************
+*Feature: _GeneralEveryday
+{
+    *Name: "_GeneralEveryday"
+    *DefaultOption: MediaType
+    *Option: MediaType					*%*****   FeatureName:StaticText ResourceID ********
+    {
+      *Name:"IDS_MTYPE_PLAIN_PAPER;IDS_MTYPE_HP_PHOTO_PAPERS;IDS_MTYPE_HP_MATTE_BROCHURE_OR_PROF_PPR;IDS_MTYPE_MATTE_PRESENTATION_PAPER;IDS_MTYPE_HP_GLOSSY_BROCHURE_OR_PROF_PPR;IDS_MTYPE_OTHER_PHOTO_INK_JET_PAPERS;IDS_MTYPE_OTHER_MATTE_INK_JET_PAPERS;IDS_MTYPE_OTHER_GLOSSY_INK_JET_PAPERS"
+    }
+    *Option: PageOutputQuality
+    {
+	    *% psk values
+        *Name: "Draft;Normal;High"
+    }
+	*Option: BorderlessPrint
+    {
+        *Name: "IDS_OFF;IDS_ON"
+    }
+	*Option: DocumentNUp
+    {
+       *Name: "IDS_1UP;IDS_2UP;IDS_4UP;IDS_6UP;IDS_9UP;IDS_16UP"
+    }
+    *Option: Duplex
+    {
+        *Name: "IDS_HPBOOKLET_NONE;IDS_PS_FLIP_LONGEDGE;IDS_PS_FLIP_SHORTEDGE"
+    }
+}
+
+*%******************************************************************************
+*%                            Two-sided(Duplex) Printing settings
+*%******************************************************************************
+*Feature: _Duplex
+{
+    *Name: "_Duplex"
+    *DefaultOption: MediaType
+    *Option: MediaType				*%*****   FeatureName:StaticText ResourceID ********
+    {
+        *Name:"IDS_MTYPE_PLAIN_PAPER;IDS_MTYPE_HP_MATTE_BROCHURE_OR_PROF_PPR;IDS_MTYPE_MATTE_PRESENTATION_PAPER;IDS_MTYPE_HP_GLOSSY_BROCHURE_OR_PROF_PPR;IDS_MTYPE_OTHER_MATTE_INK_JET_PAPERS;IDS_MTYPE_OTHER_GLOSSY_INK_JET_PAPERS"
+    }
+    *Option: PageOutputQuality
+    {
+         *% psk values
+        *Name: "Draft;Normal;High"
+    }
+	*Option: DocumentNUp
+    {
+       *Name: "IDS_1UP;IDS_2UP;IDS_4UP;IDS_6UP;IDS_9UP;IDS_16UP"
+    }
+    *Option: BorderlessPrint
+    {
+        *Name: "IDS_OFF;IDS_OFF;IDS_ON"
+    }
+    *Option: Duplex
+    {
+        *Name: "IDS_HPBOOKLET_NONE;IDS_PS_FLIP_LONGEDGE;IDS_PS_FLIP_SHORTEDGE"
+    }
+}
+*%******************************************************************************
+*%                            Photo Printing – Borderless settings
+*%******************************************************************************
+*Feature: _PhotoPrintingBorderless
+{
+    *Name: "_PhotoPrintingBorderless"
+    *DefaultOption: MediaType
+    *Option: MediaType		*%*****   FeatureName:StaticText ResourceID ********
+    {
+        *Name: "IDS_MTYPE_HP_PHOTO_PAPERS;IDS_MTYPE_OTHER_PHOTO_INK_JET_PAPERS"
+    }
+    *Option: PageOutputQuality
+    {
+        *Name: "Normal;High"
+    }
+    *Option: PaperSize
+    {
+	*Name:"HP_2L_MM;HP_3_5X5_IN_L_MM;HP_3X5_IN;HP_4X12_IN_10X30_CM;HP_4X5_IN_10X13_CM;HP_4X6_IN_10X15_CM;HP_5X7_IN_13X18_CM;HP_8X10_IN;ISOA4;ISOA5;ISOA6;JISB5;HP_INDEX_CARD_3X5_IN;HP_INDEX_CARD_4X6_IN;HP_INDEX_CARD_5X8_IN;HP_INDEX_CARD_A4;HP_INDEX_CARD_LETTER;JapanHagakiPostcard;NorthAmericaLetter;HP_OFUKU_HAGAKI_200X148_MM"
+    }
+    *Option: BorderlessPrint
+    {
+        *Name: "IDS_ON"
+    }
+	*Option: Duplex
+    {
+        *Name: "IDS_HPBOOKLET_NONE"
+    }
+}
+*%******************************************************************************
+*%                            Photo Printing with White Borders settings
+*%******************************************************************************
+*Feature: _PhotoWhiteBorders
+{
+    *Name: "_PhotoWhiteBorders"
+    *DefaultOption: MediaType
+    *Option: MediaType				*%*****   FeatureName:StaticText ResourceID ********
+    {
+        *Name: "IDS_MTYPE_HP_PHOTO_PAPERS;IDS_MTYPE_OTHER_PHOTO_INK_JET_PAPERS"
+    }
+    *Option: PageOutputQuality
+    {
+        *Name: "Normal;High"
+    }
+    *Option: PaperSize
+    {
+          *Name:"HP_2L_MM;HP_3_5X5_IN_L_MM;HP_3X5_IN;HP_4X12_IN_10X30_CM;HP_4X5_IN_10X13_CM;HP_4X6_IN_10X15_CM;HP_5X7_IN_13X18_CM;HP_8X10_IN;ISOA4;ISOA5;ISOA6;JISB5;HP_INDEX_CARD_3X5_IN;HP_INDEX_CARD_4X6_IN;HP_INDEX_CARD_5X8_IN;HP_INDEX_CARD_A4;HP_INDEX_CARD_LETTER;JapanHagakiPostcard;NorthAmericaLetter;HP_OFUKU_HAGAKI_200X148_MM"
+    }
+    *Option: BorderlessPrint
+    {
+        *Name: "IDS_OFF"
+    }
+    *Option: Duplex
+    {
+        *Name: "IDS_HPBOOKLET_NONE"
+    }
+}
+*%******************************************************************************
+*%                            Fast/Economic printing
+*%******************************************************************************
+*Feature: _FastEco
+{
+    *Name: "_FastEco"
+    *DefaultOption: MediaType
+    *Option: MediaType			*%*****   FeatureName:StaticText ResourceID ********
+    {
+        *Name: "IDS_MTYPE_PLAIN_PAPER"
+    }
+    *Option: PageOutputQuality
+    {
+        *Name: "Draft"
+    }
+    *Option: BorderlessPrint
+    {
+        *Name: "IDS_OFF;IDS_ON"
+    }
+	*Option: DocumentNUp
+    {
+       *Name: "IDS_1UP;IDS_2UP;IDS_4UP;IDS_6UP;IDS_9UP;IDS_16UP"
+    }
+	*Option: Duplex
+    {
+        *Name: "IDS_HPBOOKLET_NONE;IDS_PS_FLIP_LONGEDGE;IDS_PS_FLIP_SHORTEDGE"
+    }
+}
+*%******************************************************************************
+*%                            Factory default settings
+*%******************************************************************************
+*Feature: _FactoryDefaults
+{
+    *Name: "_FactoryDefaults"
+    *DefaultOption: MediaType
+    *Option: MediaType			*%*****   FeatureName:StaticText ResourceID ********
+    {
+      *Name: "IDS_MTYPE_PLAIN_PAPER;IDS_MTYPE_HP_PHOTO_PAPERS;IDS_MTYPE_HP_MATTE_BROCHURE_OR_PROF_PPR;IDS_MTYPE_MATTE_PRESENTATION_PAPER;IDS_MTYPE_HP_GLOSSY_BROCHURE_OR_PROF_PPR;IDS_MTYPE_OTHER_PHOTO_INK_JET_PAPERS;IDS_MTYPE_OTHER_MATTE_INK_JET_PAPERS;IDS_MTYPE_OTHER_GLOSSY_INK_JET_PAPERS"
+    }
+    *Option: PageOutputQuality
+    {
+	     *% psk values
+        *Name: "Draft;Normal;High"
+    }
+    *Option: BorderlessPrint
+    {
+        *Name: "IDS_OFF;IDS_ON"
+    }
+	*Option: DocumentNUp
+    {
+       *Name: "IDS_1UP;IDS_2UP;IDS_4UP;IDS_6UP;IDS_9UP;IDS_16UP"
+    }
+    *Option: Duplex
+    {
+        *Name: "IDS_HPBOOKLET_NONE;IDS_PS_FLIP_LONGEDGE;IDS_PS_FLIP_SHORTEDGE"
+    }
+}
+
+*%==============================================================================*%
+*%                               DocumentBinding                                *%
+*%==============================================================================*%
+*Feature: DocumentBinding
+{
+	*rcNameID: =IDS_HPBOOKLET
+	*PrintSchemaKeywordMap: "DocumentBinding"
+	*DefaultOption: NONE
+	*ConcealFromUI?: TRUE
+	*Option: NONE
+	{
+		*rcNameID: =IDS_HPBOOKLET_NONE
+		*PrintSchemaKeywordMap: "None"
+	}
+	*Option: Booklet
+	{
+		*rcNameID: =IDS_HPBOOKLET_LEFTBIND
+		*PrintSchemaKeywordMap: "Booklet"
+	}
+	*Option: JapaneseBooklet
+	{
+		*rcNameID: =IDS_HPBOOKLET_RIGHTBIND
+	}
+}
+
+*%******************************************************************************************
+*%                             Max DPI
+*%******************************************************************************************
+*Feature: HPMaxDpi
+{
+    *rcNameID: =IDS_MAX_DPI
+    *DefaultOption: 0_disabled
+    *Option: 0_disabled
+    {
+        *rcNameID: =IDS_NO
+    }
+    *Option: 2_1200x1200
+    {
+        *rcNameID: =IDS_YES
+    }
+}
+
+*%******************************************************************************************
+*%                             Print Quality Previous
+*%  Used in photo user Experience(In Windows Photo Gallery App) Feature for Getting the 
+*%  Previous Selected PQ value from the WPG App
+*%******************************************************************************************
+*Feature: OutputQualityPrev
+{
+    *Name: "OutputQualityPrev"
+
+    *DefaultOption: Normal
+
+	*Option: Draft
+    {
+        *Name: ""
+    }
+    	*Option: Normal
+    {
+        *Name: ""
+    }
+	*Option: High
+    {
+        *Name: ""
+    }
+}
+*%******************************************************************************************
+*%                            Borderless Previous
+*%  Used in photo user Experience(In Windows Photo Gallery App) Feature for Getting the 
+*%  Previous Selected Borderless value from the WPG App
+*%******************************************************************************************
+*Feature: BorderlessPrev
+{
+    *Name: "BorderlessPrev"
+	*DefaultOption: NO
+    *Option: NO
+    {
+       *rcNameID: =IDS_OFF
+        *PrintSchemaKeywordMap: "None"
+    }
+    *Option: BorderlessOverspray
+    {
+       *rcNameID: =IDS_ON
+	   *PrintSchemaKeywordMap: "Borderless"
+    }
+}
+
+*%******************************************************************************************
+*%                            InputBin Previous
+*%******************************************************************************************
+*Feature: InputBinPrev
+{
+	*Name: "InputBinPrev"
+    *DefaultOption: Auto
+	*Option: Auto
+    {
+        *Name: ""
+		*PrintSchemaKeywordMap: "AutoSelect"
+    }
+    *Option: 1
+    {
+        *Name: ""
+    }
+	
+ 
+}
+
+*%******************************************************************************************
+*%                                  Media Type Previous
+*%  Used in photo user Experience(In Windows Photo Gallery App) Feature for Getting the 
+*%  Previous Selected mediaType from the WPG App
+*%******************************************************************************************
+*Feature: MediaTypePrev
+{
+    *Name: "MediaTypePrev"
+
+    *DefaultOption: 0.1004.0000_0_600x600
+	*Option: 0.1004.0000_0_600x600
+    {
+        *Name: ""
+    }
+	*Option: 5.1069.0000_0_600x600
+    {
+		*Name: ""
+    } 
+	*Option: 2.1077.0000_0_600x600
+    {
+        *Name: ""
+    }
+    *Option: 2.1005.0000_0_600x600
+    {
+        *Name: ""
+    }
+    *Option: 8.1076.0000_0_600x600
+    {
+        *Name: ""
+    }
+	*Option: 5.1045.0000_0_600x600
+    {
+        *Name: ""
+    }
+	*Option: 2.1077.0000_1_600x600
+    {
+        *Name: ""
+    }
+	*Option: 8.1054.0000_0_600x600
+    {
+        *Name: ""
+    }
+}
+
+*%==============================================================================*%
+*%                                  Snapping-TouchByUser
+*%  To Keep Track of User changes in Snapping and Photo User Experience features
+*%==============================================================================*%
+*Feature: TouchByUser
+{
+    *Name: "TouchByUser_ID"
+    *DefaultOption: Off
+    *ConcealFromUI?: TRUE
+
+    *Option: Off
+    {
+        *Name: ""
+    }
+    *Option: On
+    {
+        *Name: ""
+    }
+}
+
+*%******************************************************************************************
+*%                                  SnappingData
+*% Snap Data Information used for Photo User Exp and Snapping Features
+*%******************************************************************************************
+
+*Feature: Snapp_HP_2L_MM
+{
+	*Name: "Snapp_HP_2L_MM"
+    *Option: MTS_5.1069.0000_0_600x600_IB_1_PQ_Normal_BD_Borderless_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_HP_3_5X5_IN_L_MM
+{
+    *Name: "Snapp_HP_3_5X5_IN_L_MM"
+	
+    *Option: MTS_5.1069.0000_0_600x600_IB_1_PQ_Normal_BD_Borderless_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_HP_3X5_IN
+{
+    *Name: "Snapp_HP_3X5_IN"
+	
+    *Option: MTS_5.1069.0000_0_600x600_IB_1_PQ_Normal_BD_Borderless_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_HP_4X6_IN_10X15_CM
+{
+	*Name: "Snapp_HP_4X6_IN_10X15_CM"
+    *Option: MTS_5.1069.0000_0_600x600_IB_1_PQ_Normal_BD_Borderless_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_HP_4X5_IN_10X13_CM
+{
+    *Name: "Snapp_HP_4X5_IN_10X13_CM"
+    *Option: MTS_5.1069.0000_0_600x600_IB_1_PQ_Normal_BD_Borderless_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_HP_4X6_IN_10X15_CM
+{
+	*Name: "Snapp_HP_4X6_IN_10X15_CM"
+    *Option: MTS_5.1069.0000_0_600x600_IB_1_PQ_Normal_BD_Borderless_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_HP_4X12_IN_10X30_CM
+{
+	*Name: "Snapp_HP_4X12_IN_10X30_CM"
+    *Option: MTS_5.1069.0000_0_600x600_IB_1_PQ_Normal_BD_Borderless_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_HP_5X7_IN_13X18_CM
+{
+	*Name: "Snapp_HP_5X7_IN_13X18_CM"
+    *Option: MTS_5.1069.0000_0_600x600_IB_1_PQ_Normal_BD_Borderless_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_NorthAmericaPersonalEnvelope
+{
+	*Name: "Snapp_NorthAmericaPersonalEnvelope"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_HP_8_5X13_IN
+{
+	*Name: "Snapp_HP_8_5X13_IN"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_HP_8X10_IN
+{
+	*Name: "Snapp_HP_8X10_IN"
+    *Option: MTS_5.1069.0000_0_600x600_IB_1_PQ_Normal_BD_Borderless_END
+	{
+		*Name: ""
+	}
+}
+*Feature: Snapp_ISOA4
+{
+	*Name: "Snapp_ISOA4"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_ISOA5
+{
+	*Name: "Snapp_ISOA5"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_ISOA6
+{
+	*Name: "Snapp_ISOA6"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_HP_B5_ISO_176X250_MM
+{
+	*Name: "Snapp_HP_B5_ISO_176X250_MM"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_JISB5
+{
+	*Name: "Snapp_JISB5"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_CUSTOMSIZE
+{
+	*Name: "Snapp_CUSTOMSIZE"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_NorthAmericaNumber10Envelope
+{
+	*Name: "Snapp_NorthAmericaNumber10Envelope"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_HP_ENV_A2
+{
+	*Name: "Snapp_HP_ENV_A2"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_ISOC5Envelope
+{
+	*Name: "Snapp_ISOC5Envelope"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_ISOC6Envelope
+{
+	*Name: "Snapp_ISOC6Envelope"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_ISODLEnvelope
+{
+	*Name: "Snapp_ISODLEnvelope"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_NorthAmericaMonarchEnvelope
+{
+	*Name: "Snapp_NorthAmericaMonarchEnvelope"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_NorthAmericaExecutive
+{
+	*Name: "Snapp_NorthAmericaExecutive"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_HP_INDEX_CARD_3X5_IN
+{
+	*Name: "Snapp_HP_INDEX_CARD_3X5_IN"
+	*Option: MTS_2.1077.0000_1_600x600_IB_1_PQ_Normal_BD_None_END
+	{
+		*Name: ""
+	}
+}
+*Feature: Snapp_HP_INDEX_CARD_4X6_IN
+{
+	*Name: "Snapp_HP_INDEX_CARD_4X6_IN"
+	*Option: MTS_2.1077.0000_1_600x600_IB_1_PQ_Normal_BD_None_END
+	{
+		*Name: ""
+	}
+}
+*Feature: Snapp_HP_INDEX_CARD_5X8_IN
+{
+	*Name: "Snapp_HP_INDEX_CARD_5X8_IN"
+    *Option: MTS_2.1077.0000_1_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_HP_INDEX_CARD_A4
+{
+	*Name: "Snapp_HP_INDEX_CARD_A4"
+	*Option: MTS_2.1077.0000_1_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_HP_INDEX_CARD_LETTER
+{
+	*Name: "Snapp_HP_INDEX_CARD_LETTER"
+	*Option: MTS_2.1077.0000_1_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_JapanChou3Envelope
+{
+	*Name: "Snapp_JapanChou3Envelope"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_JapanChou4Envelope
+{
+	*Name: "Snapp_JapanChou4Envelope"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_JapanHagakiPostcard
+{
+	*Name: "Snapp_JapanHagakiPostcard"
+    *Option: MTS_2.1077.0000_1_600x600_IB_1_PQ_Normal_BD_Borderless_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_NorthAmericaLegal
+{
+	*Name: "Snapp_NorthAmericaLegal"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_NorthAmericaLetter
+{
+	*Name: "Snapp_NorthAmericaLetter"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_HP_OFUKU_HAGAKI_200X148_MM
+{
+	*Name: "Snapp_HP_OFUKU_HAGAKI_200X148_MM"
+	*Option: MTS_2.1077.0000_1_600x600_IB_1_PQ_Normal_BD_Borderless_END
+    {
+        *Name: ""
+    }
+}
+*Feature: Snapp_NorthAmericaStatement
+{
+	*Name: "Snapp_NorthAmericaStatement"
+    *Option: MTS_0.1004.0000_0_600x600_IB_1_PQ_Normal_BD_None_END
+    {
+        *Name: ""
+    }
+}
+
+*%==============================================================================*%
+*%                                Feature Dependencies                           *%
+*%==============================================================================*%
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, NUpBorders.On)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, DocumentBinding.JapaneseBooklet)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, DocumentBinding.Booklet)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, DocumentNUp.2)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, DocumentNUp.4)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, DocumentNUp.6)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, DocumentNUp.9)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, DocumentNUp.16)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, DocumentPageRanges.OddPages)
+*InvalidCombination: LIST(Duplex.VERTICAL, DocumentPageRanges.OddPages)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, DocumentPageRanges.EvenPages)
+*InvalidCombination: LIST(Duplex.VERTICAL, DocumentPageRanges.EvenPages)
+*InvalidCombination: LIST(DocumentBinding.Booklet, DocumentPageRanges.OddPages)
+*InvalidCombination: LIST(DocumentBinding.JapaneseBooklet, DocumentPageRanges.OddPages)
+*InvalidCombination: LIST(DocumentBinding.Booklet, DocumentPageRanges.EvenPages)
+*InvalidCombination: LIST(DocumentBinding.JapaneseBooklet, DocumentPageRanges.EvenPages)
+
+*%==============================================================================*%
+*%            Borderless constraints with Media size							*%
+*%==============================================================================*%
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, PaperSize.ENV_PERSONAL)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, PaperSize.HP_8_5X13_IN)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, PaperSize.HP_B5_ISO_176X250_MM)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, PaperSize.ENV_10)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, PaperSize.HP_ENV_A2)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, PaperSize.ENV_C5)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, PaperSize.ENV_C6)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, PaperSize.ENV_DL)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, PaperSize.ENV_MONARCH)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, PaperSize.EXECUTIVE)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, PaperSize.JENV_CHOU3)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, PaperSize.JENV_CHOU4)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, PaperSize.LEGAL)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, PaperSize.STATEMENT)
+
+*%==============================================================================*%
+*%            Borderless constraints with Media Type							*%
+*%==============================================================================*%
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, MediaType.0.1004.0000_0_600x600)
+*InvalidCombination: LIST(BorderlessPrint.BorderlessOverspray, MediaType.1.1121.0000_0_600x600)
+
+*%==============================================================================*%
+*%               Duplex constraints with Media size								*%
+*%==============================================================================*%
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.HP_2L_MM)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.HP_2L_MM)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.HP_3_5X5_IN_L_MM)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.HP_3_5X5_IN_L_MM)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.HP_3X5_IN)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.HP_3X5_IN)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.HP_4X5_IN_10X13_CM)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.HP_4X5_IN_10X13_CM)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.HP_4X6_IN_10X15_CM)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.HP_4X6_IN_10X15_CM)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.HP_4X12_IN_10X30_CM)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.HP_4X12_IN_10X30_CM)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.HP_5X7_IN_13X18_CM)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.HP_5X7_IN_13X18_CM)
+*InvalidCombination: LIST(Duplex.VERTICAL,PaperSize.ENV_PERSONAL)
+*InvalidCombination: LIST(Duplex.HORIZONTAL,PaperSize.ENV_PERSONAL)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.HP_8_5X13_IN)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.HP_8_5X13_IN)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.HP_8X10_IN)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.HP_8X10_IN)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.A5)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.A5)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.A6)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.A6)
+*InvalidCombination: LIST(Duplex.VERTICAL,PaperSize.ENV_10)
+*InvalidCombination: LIST(Duplex.HORIZONTAL,PaperSize.ENV_10)
+*InvalidCombination: LIST(Duplex.VERTICAL,PaperSize.HP_ENV_A2)
+*InvalidCombination: LIST(Duplex.HORIZONTAL,PaperSize.HP_ENV_A2)
+*InvalidCombination: LIST(Duplex.VERTICAL,PaperSize.ENV_C5)
+*InvalidCombination: LIST(Duplex.HORIZONTAL,PaperSize.ENV_C5)
+*InvalidCombination: LIST(Duplex.VERTICAL,PaperSize.ENV_C6)
+*InvalidCombination: LIST(Duplex.HORIZONTAL,PaperSize.ENV_C6)
+*InvalidCombination: LIST(Duplex.VERTICAL,PaperSize.ENV_DL)
+*InvalidCombination: LIST(Duplex.HORIZONTAL,PaperSize.ENV_DL)
+*InvalidCombination: LIST(Duplex.VERTICAL,PaperSize.ENV_MONARCH)
+*InvalidCombination: LIST(Duplex.HORIZONTAL,PaperSize.ENV_MONARCH)
+*InvalidCombination: LIST(Duplex.VERTICAL,PaperSize.HP_INDEX_CARD_3X5_IN)
+*InvalidCombination: LIST(Duplex.HORIZONTAL,PaperSize.HP_INDEX_CARD_3X5_IN)
+*InvalidCombination: LIST(Duplex.VERTICAL,PaperSize.HP_INDEX_CARD_4X6_IN)
+*InvalidCombination: LIST(Duplex.HORIZONTAL,PaperSize.HP_INDEX_CARD_4X6_IN)
+*InvalidCombination: LIST(Duplex.VERTICAL,PaperSize.HP_INDEX_CARD_5X8_IN)
+*InvalidCombination: LIST(Duplex.HORIZONTAL,PaperSize.HP_INDEX_CARD_5X8_IN)
+*InvalidCombination: LIST(Duplex.VERTICAL,PaperSize.HP_INDEX_CARD_A4)
+*InvalidCombination: LIST(Duplex.HORIZONTAL,PaperSize.HP_INDEX_CARD_A4)
+*InvalidCombination: LIST(Duplex.VERTICAL,PaperSize.HP_INDEX_CARD_LETTER)
+*InvalidCombination: LIST(Duplex.HORIZONTAL,PaperSize.HP_INDEX_CARD_LETTER)
+*InvalidCombination: LIST(Duplex.VERTICAL,PaperSize.JENV_CHOU3)
+*InvalidCombination: LIST(Duplex.HORIZONTAL,PaperSize.JENV_CHOU3)
+*InvalidCombination: LIST(Duplex.VERTICAL,PaperSize.JENV_CHOU4)
+*InvalidCombination: LIST(Duplex.HORIZONTAL,PaperSize.JENV_CHOU4)
+*InvalidCombination: LIST(Duplex.VERTICAL,PaperSize.LEGAL)
+*InvalidCombination: LIST(Duplex.HORIZONTAL,PaperSize.LEGAL)
+*InvalidCombination: LIST(Duplex.VERTICAL,PaperSize.HP_OFUKU_HAGAKI_200X148_MM)
+*InvalidCombination: LIST(Duplex.HORIZONTAL,PaperSize.HP_OFUKU_HAGAKI_200X148_MM)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.STATEMENT)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.STATEMENT)
+
+*%==============================================================================*%
+*%               Duplex constraints with Media Type								*%
+*%==============================================================================*%
+*InvalidCombination: LIST(Duplex.VERTICAL, MediaType.5.1069.0000_0_600x600)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, MediaType.5.1069.0000_0_600x600)
+*InvalidCombination: LIST(Duplex.VERTICAL, MediaType.5.1045.0000_0_600x600)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, MediaType.5.1045.0000_0_600x600)
+
+*%==============================================================================*%
+*%                                Color mode with MediaType					    *%
+*%==============================================================================*%
+*InvalidCombination: LIST(ColorMode.MonoBlackOutput, MediaType.5.1069.0000_0_600x600)
+*InvalidCombination: LIST(ColorMode.MonoBlackOutput, MediaType.5.1045.0000_0_600x600)

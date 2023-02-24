@@ -1,0 +1,1630 @@
+
+{
+   "upperTasksArray":[
+      {
+         "id":"UDCePCPage",
+         "IsAvailable" : false,
+         "image":"./UDC_files/taskImg/ePC_icon.png",
+         "img0":"./UDC_files/taskImg/ePC_Normal_icon.png",
+         "img1":"./UDC_files/taskImg/ePC_Highlighted_icon.png",
+         "img2":"./UDC_files/taskImg/ePC_Disabled_icon.png",
+         "title":"UDCString00169",
+         "rollover_desc":"UDCString00112",
+         "reqArray":[
+          {
+             "type":"web_services_enabled",
+             "condition":true
+          },
+          {
+             "type":"control_panel_locked",
+             "condition":false
+          },
+          {
+             "type":"ews_password_set",
+             "condition":false
+          },
+	     {
+             "type":"usb_only_device",
+             "condition":false
+          }		  
+         ],
+         "type":"link_external",
+         "location":"%URL_EPC_PAGE%",
+         "subTasksArray":[
+
+         ]
+      },
+      {
+         "id":"UDCDevicePage",
+         "IsAvailable" : true,
+         "image":"./UDC_files/taskImg/DeviceActions_PrintScan.png",
+                  "img0":"./UDC_files/taskImg/DeviceActions_PrintScan_Normal.png",
+                  "img1":"./UDC_files/taskImg/DeviceActions_PrintScan_Highlighted.png",
+                  "img2":"./UDC_files/taskImg/DeviceActions_PrintScan_Disabled.png",
+                  "title":"UDCString00201",
+                  "rollover_desc":"UDCString00170",
+         "type":"hasSubtaskCategories",
+         "reqArray":[
+            {
+               "type":"connected",
+               "condition":true
+            }
+         ],
+         "categoryArray":[
+            {
+               "id":"UDC_Print_Category",
+               "image":"./UDC_files/taskImg/printer.png",
+               "IsAvailable" : true,
+               "tasklist_desc":"UDCString00151",
+               "reqArray":[
+                  {
+                     "type":"printer",
+                     "condition":true
+                  }
+               ],
+               "subTasksArray":[
+                  {
+                     "id":"UDC_Print_ePrintSetup",
+                     "category":"UDC_Print_Category",
+                     "IsAvailable" : false,
+                     "image":"./UDC_files/taskImg/eprintsetup.png",
+                     "title":"UDCString00100",
+                     "description":"UDCString00099",
+                     "type":"local",
+                     "location":"%URL_EPRINTSETUP_PAGE%",
+                     "reqArray":[
+                        {
+                           "type":"networked",
+                           "condition":true
+                        },
+                        {
+                           "type":"web_services_enabled",
+                           "condition":true
+                        },
+                        {
+                           "type":"control_panel_locked",
+                           "condition":false
+                        },
+                        {
+                           "type":"ews_password_set",
+                           "condition":false
+                        }   
+                     ]
+                  },
+                  {
+                     "id":"UDC_Print_See",
+                     "category":"UDC_Print_Category",
+                     "IsAvailable" : true,
+                     "image":"./UDC_files/taskImg/seewhatsprinting.png",
+                     "title":"UDCString00001",
+                     "description":"UDCString00002",
+                     "type":"local",
+                     "location":"rundll32 printui.dll,PrintUIEntry /o /n \"%PRINTER_FRIENDLY_NAME%\"",
+                     "reqArray":[
+
+                     ]
+                  },
+                  {
+                     "id":"UDC_Print_Pref",
+                     "category":"UDC_Print_Category",
+                     "IsAvailable" : true,
+                     "image":"./UDC_files/taskImg/print_preference.png",
+                     "title":"UDCString00007",
+                     "description":"UDCString00008",
+                     "type":"local",
+                     "location":"rundll32 printui.dll,PrintUIEntry /e /n \"%PRINTER_FRIENDLY_NAME%\"",
+                     "reqArray":[
+
+                     ]
+                  },
+                  {
+                     "id":"UDC_Print_Customize",
+                     "category":"UDC_Print_Category",
+                     "IsAvailable" : true,
+                     "image":"./UDC_files/taskImg/print_customize.png",
+                     "title":"UDCString00004",
+                     "description":"UDCString00005",
+                     "type":"local",
+                     "location":"rundll32 printui.dll,PrintUIEntry /p /n \"%PRINTER_FRIENDLY_NAME%\"",
+                     "reqArray":[
+
+                     ]
+                  },
+                  {
+                     "id":"UDC_Print_Maintain",
+                     "category":"UDC_Print_Category",
+                     "IsAvailable" : true,
+                     "image":"./UDC_files/taskImg/print_maintenance.png",
+                     "title":"UDCString00010",
+                     "description":"UDCString00011",
+                     "type":"local",
+                     "location":"\"%INSTALLDIR%/Toolbox.exe\"  \"%DEVICE_ID%\"",
+                     "reqArray":[
+                        {
+                           "type":"file_exist",
+                           "id":"%INSTALLDIR%/Toolbox.exe",
+                           "condition":true
+                        }
+                     ]
+                  },
+                  {
+                     "id":"UDC_Print_DeviceToolbox",
+                     "category":"UDC_Print_Category",
+                     "IsAvailable" : false,
+                     "image":"./UDC_files/taskImg/HPDevToolbox.png",
+                     "title":"UDCString00322",
+                     "description":"UDCString00323",
+                     "type":"local",
+                     "location":"\"%INSTALLDIR%/EWSProxy.exe\"  \"%DEVICE_ID%\" /app Home",
+                     "reqArray":[
+                        {
+                           "type":"file_exist",
+                           "id":"%INSTALLDIR%/EWSProxy.exe",
+                           "condition":true
+                        }
+                     ]
+                  },
+                  {
+                     "id":"UDC_Print_EWS",
+                     "category":"UDC_Print_Category",
+                     "IsAvailable" : false,
+                     "image":"./UDC_files/taskImg/PrinterHomePage.png",
+                     "title":"UDCString00108",
+                     "description":"UDCString00109",
+                     "type":"local",
+                     "location":"%URL_EWSHOME_PAGE%",
+                     "reqArray":[
+                        {
+                           "type":"networked",
+                           "condition":true
+                        }
+                     ]
+                  },
+                  {
+                     "id":"UDC_Print_Mobile",
+                     "category":"UDC_Print_Category",
+                     "IsAvailable" : false,
+                     "image":"./UDC_files/taskImg/mobilePrinting.png",
+                     "title":"UDCString00312",
+                     "description":"UDCString00313",
+                     "type":"link",
+                     "location":"%url_mobilePrinting%",
+                     "reqArray":[
+                        ]
+                  },
+                  {
+                     "id":"UDC_Print_ColorAccessControl",
+                     "category":"UDC_Print_Category",
+                     "IsAvailable" : false,
+                     "image":"./UDC_files/taskImg/coloraccesscontrol.png",
+                     "title":"UDCString00204",
+                     "description":"UDCString00205",
+                     "type":"local",
+                     "location":"%URL_COLOR_ACCESS_CONTROL_PAGE%",
+                     "reqArray":[
+                        {
+                           "type":"networked",
+                           "condition":true
+                        },
+                        {
+                           "type":"color_access_control_supported",
+                           "condition":true                        
+                        }
+                     ]                                       
+                  }                  
+               ]
+            },
+            {
+               "id":"UDC_Scan_Category",
+               "image":"./UDC_files/taskImg/gray_scanner.png",
+               "IsAvailable" : true,
+               "tasklist_desc":"UDCString00153",
+               "reqArray":[
+                  {
+                     "type":"scanner",
+                     "condition":true
+                  }
+               ],
+               "subTasksArray":[
+                  {
+                     "id":"UDC_Scan_Start32",
+                     "category":"UDC_Scan_Category",
+                     "IsAvailable" : true,
+                     "image":"./UDC_files/taskImg/gray_scanner.png",
+                     "title":"UDCString00013",
+                     "description":"UDCString00014",
+                     "type":"local",
+                     "location":"\"%INSTALLDIR%/HPScan.exe\" -FriendlyName \"%SCANNER_FRIENDLY_NAME%\"",
+                     "reqArray":[
+                        {
+                           "type":"64bitOS",
+                           "condition":false
+                        },
+                        {
+                           "type":"file_exist",
+                           "id":"%INSTALLDIR%/HPScan.exe",
+                           "condition":true
+                        }
+                     ]
+                  },
+                  {
+                     "id":"UDC_Scan_Start64",
+                     "category":"UDC_Scan_Category",
+                     "IsAvailable" : true,
+                     "image":"./UDC_files/taskImg/gray_scanner.png",
+                     "title":"UDCString00013",
+                     "description":"UDCString00014",
+                     "type":"local",
+                     "location":"\"%INSTALLDIR_X86%/HPScan.exe\" -FriendlyName \"%SCANNER_FRIENDLY_NAME%\"",
+                     "reqArray":[
+                        {
+                           "type":"64bitOS",
+                           "condition":true
+                        },
+                        {
+                           "type":"file_exist",
+                           "id":"%INSTALLDIR_X86%/HPScan.exe",
+                           "condition":true
+                        }
+                     ]
+                  },
+                  {
+                     "id":"UDC_Scan_StartXPV",
+                     "category":"UDC_Scan_Category",
+                     "IsAvailable" : true,
+                     "image":"./UDC_files/taskImg/gray_scanner.png",
+                     "title":"UDCString00013",
+                     "description":"UDCString00014",
+                     "type":"local",
+                     "location":"\"%ProgramFiles%/HP/HP Scan/bin/HPScan.exe\"",
+                     "reqArray":[
+                        {
+                           "type":"64bitOS",
+                           "condition":false
+                        },
+                        {
+                           "type":"file_exist",
+                           "id":"%ProgramFiles%/HP/HP Scan/bin/HPScan.exe",
+                           "condition":true
+                        }
+                     ]
+                  },                  
+                  {
+                     "id":"UDC_Scan_EmailWiz",
+                     "category":"UDC_Scan_Category",
+                     "IsAvailable" : false,
+                     "image":"./UDC_files/taskImg/scan_to_email_wizard.png",
+                     "title":"UDCString00089",
+                     "description":"UDCString00090",
+                     "type":"local",
+                     "location":"\"%INSTALLDIR%/DigitalWizards.exe\" %DEVICE_ID% /app ScanToEmailWizard",
+                     "reqArray":[
+                        {
+                           "type":"file_exist",
+                           "id":"%INSTALLDIR%/DigitalWizards.exe",
+                           "condition":true
+                        },
+                        {
+                           "type":"networked",
+                           "condition":true
+                        }
+                     ]
+                  },
+                  {
+                     "id":"UDC_Scan_FolderWiz",
+                     "category":"UDC_Scan_Category",
+                     "IsAvailable" : false,
+                     "image":"./UDC_files/taskImg/scan_to_folder_wizard.png",
+                     "title":"UDCString00087",
+                     "description":"UDCString00088",
+                     "type":"local",
+                     "location":"\"%INSTALLDIR%/DigitalWizards.exe\" %DEVICE_ID% /app ScanToFolderWizard",
+                     "reqArray":[
+                        {
+                           "type":"file_exist",
+                           "id":"%INSTALLDIR%/DigitalWizards.exe",
+                           "condition":true
+                        },
+                        {
+                           "type":"networked",
+                           "condition":true
+                        }
+                     ]
+                  },
+                  {
+                     "id":"UDC_Scan_ManageScan2PC",
+                     "category":"UDC_Scan_Category",
+                     "IsAvailable" : false,
+                     "image":"./UDC_files/taskImg/activate_scan_to_pc.png",
+                     "title":"UDCString00077",
+                     "description":"UDCString00078",
+                     "type":"local",
+                     "location":"\"%INSTALLDIR%/ScanToPCActivationApp.exe\" -deviceID %DEVICE_ID% -scfn \"%SCANNER_FRIENDLY_NAME%\"",
+                     "reqArray":[
+                        {
+                           "type":"file_exist",
+                           "id":"%INSTALLDIR%/ScanToPCActivationApp.exe",
+                           "condition":true
+                        },
+                        {
+                           "type":"networked",
+                           "condition":true
+                        },
+                        {
+                           "type":"wsd",
+                           "condition":false
+                        }
+                     ]
+                  },
+                  {
+                     "id":"UDC_Scan_EWS",
+                     "category":"UDC_Scan_Category",
+                     "IsAvailable" : false,
+                     "image":"./UDC_files/taskImg/PrinterHomePage.png",
+                     "title":"UDCString00120",
+                     "description":"UDCString00121",
+                     "type":"local",
+                     "location":"%URL_EWSHOME_PAGE%",
+                     "reqArray":[
+                        {
+                           "type":"networked",
+                           "condition":true
+                        }
+                     ]
+                  },
+                  {
+                     "id":"UDC_Scan_ReadirisLink",
+                     "category":"UDC_Scan_Category",
+                     "IsAvailable" : false,
+                     "image":"./UDC_files/taskImg/ReadirisLink.png",
+                     "title":"UDCString00330",
+                     "description":"UDCString00331",
+                     "type":"link",
+                     "location":"%url_readiris%",
+                     "reqArray":[
+                        {
+                           "type":"scanner",
+                           "condition":true
+                        }					 
+					 ]
+                  },                                    
+                  {
+                     "id":"UDC_Scan_CardirisLink",
+                     "category":"UDC_Scan_Category",
+                     "IsAvailable" : false,
+                     "image":"./UDC_files/taskImg/CardirisLink.png",
+                     "title":"UDCString00332",
+                     "description":"UDCString00333",
+                     "type":"link",
+                     "location":"%url_cardiris%",
+                     "reqArray":[
+                        {
+                           "type":"scanner",
+                           "condition":true
+                        }					 
+					 ]
+                  }                                    
+               ]
+            },
+            {
+               "id":"UDC_Fax_Category",
+               "image":"./UDC_files/taskImg/fax_actions.png",
+               "IsAvailable" : false,
+               "tasklist_desc":"UDCString00159",
+               "reqArray":[],
+               "subTasksArray":[
+                  {
+                     "id":"UDC_Fax_Send",
+                     "category":"UDC_Fax_Category",
+                     "IsAvailable" : false,
+                     "image":"./UDC_files/taskImg/SendAFax.png",
+                     "title":"UDCString00102",
+                     "description":"UDCString00103",
+                     "type":"local",
+                     "location":"\"%INSTALLDIR%/SendAFax.exe\" %DEVICE_ID%",
+                     "reqArray":[
+                        {
+                           "type":"file_exist",
+                           "id":"%INSTALLDIR%/SendAFax.exe",
+                           "condition":true
+                        },
+                        {
+                           "type":"fax",
+                           "condition":true
+                        }
+                     ]
+                  },
+                  {
+                     "id":"UDC_Fax_SetupWizard",
+                     "category":"UDC_Fax_Category",
+                     "IsAvailable" : false,
+                     "image":"./UDC_files/taskImg/fax_setup_wizard.png",
+                     "title":"UDCString00081",
+                     "description":"UDCString00082",
+                     "type":"local",
+                     "location":"\"%INSTALLDIR%/FaxApplications.exe\" %DEVICE_ID% /app FaxSetupWizard",
+                     "reqArray":[
+                        {
+                           "type":"file_exist",
+                           "id":"%INSTALLDIR%/FaxApplications.exe",
+                           "condition":true
+                        },
+                        {
+                           "type":"fax",
+                           "condition":true
+                        }
+                     ]
+                  },
+                  {
+                     "id":"UDC_Fax_Manage",
+                     "category":"UDC_Fax_Category",
+                     "IsAvailable" : false,
+                     "image":"./UDC_files/taskImg/manage_fax_settings.png",
+                     "title":"UDCString00083",
+                     "description":"UDCString00084",
+                     "type":"local",
+                     "location":"\"%INSTALLDIR%/FaxApplications.exe\" %DEVICE_ID% /app FaxManager",
+                     "reqArray":[
+                        {
+                           "type":"file_exist",
+                           "id":"%INSTALLDIR%/FaxApplications.exe",
+                           "condition":true
+                        },
+                        {
+                           "type":"fax",
+                           "condition":true
+                        }
+                     ]
+                  },
+                  {
+                     "id":"UDC_Fax_Digital_USB",
+                     "category":"UDC_Fax_Category",
+                     "IsAvailable": false,
+                     "image":"./UDC_files/taskImg/digital_fax_setup_wizard.png",
+                     "title":"UDCString00085",
+                     "description":"UDCString00086",
+                     "type":"local",
+                     "location":"\"%INSTALLDIR%/DigitalWizards.exe\" %DEVICE_ID% /app DigitalFaxWizard /archive",
+                     "reqArray":[
+                        {
+                           "type":"file_exist",
+                           "id":"%INSTALLDIR%/DigitalWizards.exe",
+                           "condition":true
+                        },
+                        {
+                            "type":"networked",
+                            "condition":false
+                        },
+                        {
+                           "type":"fax",
+                           "condition":true
+                        }
+                     ]
+                  },
+                  {
+                     "id":"UDC_Fax_Digital_network",
+                     "category":"UDC_Fax_Category",
+                     "IsAvailable": false,
+                     "image":"./UDC_files/taskImg/digital_fax_setup_wizard.png",
+                     "title":"UDCString00085",
+                     "description":"UDCString00086",
+                     "type":"local",
+                     "location":"\"%INSTALLDIR%/DigitalWizards.exe\" %DEVICE_ID% /app DigitalFaxWizard /filing /archive",
+                     "reqArray":[
+                        {
+                           "type":"file_exist",
+                           "id":"%INSTALLDIR%/DigitalWizards.exe",
+                           "condition":true
+                        },
+                        {
+                           "type":"networked",
+                           "condition":true
+                        },
+                        {
+                           "type":"fax",
+                           "condition":true
+                        }
+                        ]
+                    },
+                  {
+                     "id":"UDC_Fax_Digital",
+                     "category":"UDC_Fax_Category",
+                     "IsAvailable": false,
+                     "image":"./UDC_files/taskImg/digital_fax_setup_wizard.png",
+                     "title":"UDCString00085",
+                     "description":"UDCString00086",
+                     "type":"local",
+                     "location":"\"%INSTALLDIR%/DigitalWizards.exe\" %DEVICE_ID% /app DigitalFaxWizard /filing /archive",
+                     "reqArray":[
+                        {
+                           "type":"file_exist",
+                           "id":"%INSTALLDIR%/DigitalWizards.exe",
+                           "condition":true
+                        },
+                        {
+                           "type":"fax",
+                           "condition":true
+                        }
+                        ]
+                    },                    
+                    {
+                     "id":"UDC_Fax_eFax_US",
+                     "category":"UDC_Fax_Category",
+                     "IsAvailable": false,
+                     "image":"./UDC_files/taskImg/eFax.png",
+                     "title":"UDCString00116",
+                     "description":"UDCString00117",
+                     "type":"link",
+                     "location":"https://www.efax.com/promohp?v=1&tp=HPSW&locale=%LANG_EFAX%-US&eID=%HASH%",
+                     "reqArray":[
+                        {
+                           "type":"country",
+                           "id":"US",
+                           "condition":true
+                        }
+                        ]
+                    },
+                    {
+                     "id":"UDC_Fax_eFax_CA",
+                     "category":"UDC_Fax_Category",
+                     "IsAvailable": false,
+                     "image":"./UDC_files/taskImg/eFax.png",
+                     "title":"UDCString00116",
+                     "description":"UDCString00117",
+                     "type":"link",
+                     "location":"https://www.efax.com/promohp?v=1&tp=HPSW&locale=%LANG_EFAX%-CA&eID=%HASH%",
+                     "reqArray":[
+                        {
+                           "type":"country",
+                           "id":"CA",
+                           "condition":true
+                        }
+                        ]
+                    }
+                ]
+            }
+         ]
+      },
+      {
+         "id":"UDCShopPage",
+         "IsAvailable" : true,
+         "image":"./UDC_files/taskImg/Shopping_icon.png",
+         "img0":"./UDC_files/taskImg/Shopping_Normal_icon.png",
+         "img1":"./UDC_files/taskImg/Shopping_Highlighted_icon.png",
+         "img2":"./UDC_files/taskImg/Shopping_Disabled_icon.png",
+         "title":"UDCString00168",
+         "rollover_desc":"UDCString00156",
+         "tasklist_desc":"UDCString00168",
+         "type":"hasSubtasks",
+         "reqArray":[],
+         "subTasksArray":[
+            {
+               "id":"UDC_Shop_DTSS",
+               "IsAvailable" : true,
+               "image":"./UDC_files/taskImg/hp_supply.png",
+               "title":"UDCString00051",
+               "description":"UDCString00052",
+               "type":"local",
+               "location":"\"%INSTALLDIR%/hpqDTSS.exe\" -prfn \"%PRINTER_FRIENDLY_NAME%\"",
+               "reqArray":[
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR%/hpqDTSS.exe",
+                     "condition":true
+                  },
+                  {
+                     "type":"connected",
+                     "condition":true
+                  },
+                  {
+                     "type":"subscribed_to_instant_ink",
+                     "condition":false
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Shop_DTSSSettings",
+               "IsAvailable" : true,
+               "image":"./UDC_files/taskImg/DTSS_settings.png",
+               "title":"UDCString00053",
+               "description":"UDCString00054",
+               "type":"local",
+               "location":"\"%INSTALLDIR%/hpqDTSS.exe\" -settings  -prfn \"%PRINTER_FRIENDLY_NAME%\"",
+               "reqArray":[
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR%/hpqDTSS.exe",
+                     "condition":true
+                  },
+                  {
+                     "type":"connected",
+                     "condition":true
+                  },
+                  {
+                     "type":"subscribed_to_instant_ink",
+                     "condition":false
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Shop_Other",
+               "IsAvailable" : true,
+               "image":"./UDC_files/taskImg/other_products.png",
+               "title":"UDCString00059",
+               "description":"UDCString00060",
+               "type":"link",
+               "location":"http://www.hpshopping.com",
+               "reqArray":[]
+            },
+            {
+               "id":"UDC_Shop_SmartDealsUS",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/deals.png",
+               "title":"UDCString00069",
+               "description":"UDCString00070",
+               "type":"local",
+               "location":"\"%INSTALLDIR%/HPSmartDeals.exe\" -bntp dxp",
+               "reqArray":[
+                  {
+                     "type":"country",
+                     "id":"US",
+                     "condition":true
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR%/HPSmartDeals.exe",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Shop_Exceptional",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/deals.png",
+               "title":"UDCString00021",
+               "description":"UDCString00022",
+               "type":"local",
+               "location":"\"%INSTALLDIR%/HPSmartDeals.exe\" -bntp dxp",
+               "reqArray":[
+                  {
+                     "type":"country",
+                     "id":"US",
+                     "condition":false
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR%/HPSmartDeals.exe",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+                    "id": "UDC_Shop_PhotoCreations32",
+                    "IsAvailable" : false,
+                    "image" : "./UDC_files/taskImg/hp_photo_creation.png",
+                    "title" : "UDCString00091",
+                    "description" : "UDCString00092",
+                    "type" : "local",
+                    "location" : "\"%ProgramFiles%/HP Photo Creations/PhotoProduct.exe\"",        
+                    "reqArray" : 
+                    [
+                        {
+                            "type" : "64bitOS",
+                            "condition" : false
+                        },
+                        {
+                            "type" : "reg_exist",
+                            "id" : "HKEY_LOCAL_MACHINE\\SOFTWARE\\RocketLife\\HP Photo Creations\\path",
+                            "condition" : true
+                        },
+                        {
+                            "type" : "file_exist",
+                            "id" : "%ProgramFiles%/HP Photo Creations/PhotoProduct.exe",
+                            "condition" : true
+                        }
+                    ]
+                },
+                {
+                    "id": "UDC_Shop_PhotoCreations64",
+                    "IsAvailable" : false,
+                    "image" : "./UDC_files/taskImg/hp_photo_creation.png",
+                    "title" : "UDCString00091",
+                    "description" : "UDCString00092",
+                    "type" : "local",
+                    "location" : "\"%ProgramFiles(x86)%/HP Photo Creations/PhotoProduct.exe\"",        
+                    "reqArray" : 
+                    [
+                        {
+                            "type" : "64bitOS",
+                            "condition" : true
+                        },
+                        {
+                            "type" : "reg_exist",
+                            "id" : "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\RocketLife\\HP Photo Creations\\path",
+                            "condition" : true
+                        },
+                        {
+                            "type" : "file_exist",
+                            "id" : "%ProgramFiles(x86)%/HP Photo Creations/PhotoProduct.exe",
+                            "condition" : true
+                        }
+                    ]
+                },
+                {
+                    "id": "UDC_Shop_PhotoCreationsLinkOJ",
+                    "IsAvailable" : false,
+                    "image" : "./UDC_files/taskImg/hp_photo_creation.png",
+                    "title" : "UDCString00091",
+                    "description" : "UDCString00092",
+                    "type" : "link",
+                    "location" : "%url_hppc_ojp%",
+                    "reqArray" : []
+                },
+                {
+                    "id": "UDC_Shop_PhotoCreationsLinkOther",
+                    "IsAvailable" : true,
+                    "image" : "./UDC_files/taskImg/hp_photo_creation.png",
+                    "title" : "UDCString00091",
+                    "description" : "UDCString00092",
+                    "type" : "link",
+                    "location" : "%url_hppc_other%",
+                    "reqArray" : []
+                },
+                {
+                    "id": "UDC_Shop_Snapfish",
+                    "IsAvailable" : false,
+                    "image" : "./UDC_files/taskImg/snapfish.png",
+                    "title" : "UDCString00055",
+                    "description" : "UDCString00056",
+                    "type" : "link",
+                    "location" : "%url_snapfish_%COUNTRY%%",
+                    "reqArray" : []
+                },
+                {
+                    "id": "UDC_Shop_Coupons",
+                    "IsAvailable" : false,
+                    "image" : "./UDC_files/taskImg/Couponscom.png",
+                    "title" : "UDCString00110",
+                    "description" : "UDCString00111",
+                    "type" : "link",
+                    "location" : "%url_coupons%",
+                    "reqArray" : 
+                    [
+                        {
+                         "type":"country",
+                         "id":"US",
+                         "condition":true
+                        }
+                    ]
+                },
+                {
+                    "id": "UDC_Shop_Savings",
+                    "IsAvailable" : false,
+                    "image" : "./UDC_files/taskImg/Savings.png",
+                    "title" : "UDCString00310",
+                    "description" : "UDCString00311",
+                    "type" : "link",
+                    "location" : "%url_savings%",
+                    "reqArray" : 
+                    [
+                        {
+                         "type":"country",
+                         "id":"US",
+                         "condition":true
+                        }
+                    ]
+                },
+                  {
+                     "id":"UDC_Shop_FBApp",
+                     "IsAvailable": false,
+                     "image":"./UDC_files/taskImg/FB_App.png",
+                     "title":"UDCString00023",
+                     "description":"UDCString00024",
+                     "type":"link",
+                     "location":"http://www.hpphotoandalbumprinting.com",
+                     "reqArray":[
+                        {
+                          "type":"country",
+                          "id":"US",
+                          "condition":true
+                        }
+                     ]
+                  }
+            ]
+        },
+        {
+         "id":"UDCHelpPage",
+         "IsAvailable" : true,
+         "image":"./UDC_files/taskImg/Help_icon.png",
+         "img0":"./UDC_files/taskImg/Help_Normal_icon.png",
+         "img1":"./UDC_files/taskImg/Help_Highlighted_icon.png",
+         "img2":"./UDC_files/taskImg/Help_Disabled_icon.png",
+         "title":"UDCString00157",
+         "rollover_desc":"UDCString00158",
+         "tasklist_desc":"UDCString00157",
+         "type":"hasSubtasks",
+         "reqArray":[],
+         "subTasksArray":[
+            {
+               "id":"UDC_Help_HelpViewer32",
+               "IsAvailable" : true,
+               "image":"./UDC_files/taskImg/hp_total_care.png",
+               "title":"UDCString00057",
+               "description":"UDCString00058",
+               "type":"local",
+               "location":"\"%INSTALLDIR%/HelpViewer/hpqlpvwr.exe\" /deviceID %DEVICE_ID%",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":false
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR%/HelpViewer/hpqlpvwr.exe",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Help_HelpViewer64",
+               "IsAvailable" : true,
+               "image":"./UDC_files/taskImg/hp_total_care.png",
+               "title":"UDCString00057",
+               "description":"UDCString00058",
+               "type":"local",
+               "location":"\"%INSTALLDIR%/HelpViewer/hpqlpvwr.exe\" /deviceID %DEVICE_ID%",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":true
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR%/HelpViewer/hpqlpvwr.exe",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Help_UserGuide32",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/UserGuide.png",
+               "title":"UDCString00324",
+               "description":"UDCString00325",
+               "type":"open_file",
+               "location" : "\"%SxS_INSTALLDIR%/IT310_use_%LANG_CODE%.chm\"",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":false
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%SxS_INSTALLDIR%/IT310_use_%LANG_CODE%.chm",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Help_UserGuide64",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/UserGuide.png",
+               "title":"UDCString00324",
+               "description":"UDCString00325",
+               "type":"open_file",
+               "location": "\"%SxS_INSTALLDIR_X86%/IT310_use_%LANG_CODE%.chm\"",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":true
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%SxS_INSTALLDIR_X86%/IT310_use_%LANG_CODE%.chm",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Help_WarrantyGuide32",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/WarrantyLegalGuide.png",
+               "title":"UDCString00326",
+               "description":"UDCString00327",
+               "type":"open_file",
+               "location" : "\"%SxS_INSTALLDIR%/IT310_warranty-legal_%LANG_CODE%.chm\"",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":false
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%SxS_INSTALLDIR%/IT310_warranty-legal_%LANG_CODE%.chm",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Help_WarrantyGuide64",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/WarrantyLegalGuide.png",
+               "title":"UDCString00326",
+               "description":"UDCString00327",
+               "type":"open_file",
+               "location": "\"%SxS_INSTALLDIR_X86%/IT310_warranty-legal_%LANG_CODE%.chm\"",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":true
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%SxS_INSTALLDIR_X86%/IT310_warranty-legal_%LANG_CODE%.chm",
+                     "condition":true
+                  }
+               ]
+            },    
+            {
+               "id":"UDC_Help_UserGuidePDF32",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/UserGuide.png",
+               "title":"UDCString00324",
+               "description":"UDCString00325",
+               "type":"open_file",
+               "location" : "\"%SxS_INSTALLDIR%/NULL_use_%LANG_CODE%.chm\"",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":false
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%SxS_INSTALLDIR%/NULL_use_%LANG_CODE%.chm",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Help_UserGuidePDF64",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/UserGuide.png",
+               "title":"UDCString00324",
+               "description":"UDCString00325",
+               "type":"open_file",
+               "location": "\"%SxS_INSTALLDIR_X86%/NULL_use_%LANG_CODE%.chm\"",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":true
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%SxS_INSTALLDIR_X86%/NULL_use_%LANG_CODE%.chm",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Help_WarrantyGuidePDF32",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/WarrantyLegalGuide.png",
+               "title":"UDCString00326",
+               "description":"UDCString00327",
+               "type":"open_file",
+               "location" : "\"%SxS_INSTALLDIR%/NULL_warranty-legal_%LANG_CODE%.pdf\"",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":false
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%SxS_INSTALLDIR%/NULL_warranty-legal_%LANG_CODE%.pdf",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Help_WarrantyGuidePDF64",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/WarrantyLegalGuide.png",
+               "title":"UDCString00326",
+               "description":"UDCString00327",
+               "type":"open_file",
+               "location": "\"%SxS_INSTALLDIR_X86%/NULL_warranty-legal_%LANG_CODE%.pdf\"",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":true
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%SxS_INSTALLDIR_X86%/NULL_warranty-legal_%LANG_CODE%.pdf",
+                     "condition":true
+                  }
+               ]
+            }, 
+            {
+               "id":"UDC_Help_ScannerUserGuide32",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/hp_total_care.png",
+               "title":"UDCString00318",
+               "description":"UDCString00319",
+               "type":"open_file",
+               "location" : "\"%INSTALLDIR%/SJP4500fn1_use_%LANG_CODE%.pdf\"",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":false
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR%/SJP4500fn1_use_%LANG_CODE%.pdf",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Help_ScannerUserGuide64",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/hp_total_care.png",
+               "title":"UDCString00318",
+               "description":"UDCString00319",
+               "type":"open_file",
+               "location": "\"%INSTALLDIR_X86%/SJP4500fn1_use_%LANG_CODE%.pdf\"",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":true
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR_X86%/SJP4500fn1_use_%LANG_CODE%.pdf",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Help_ScannerWarranty32",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/legal.png",
+               "title":"UDCString00320",
+               "description":"UDCString00321",
+               "type":"open_file",
+               "location" : "\"%INSTALLDIR%/SJP4500fn1_warranty-legal_%LANG_CODE%.pdf\"",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":false
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR%/SJP4500fn1_warranty-legal_%LANG_CODE%.pdf",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Help_ScannerWarranty64",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/legal.png",
+               "title":"UDCString00320",
+               "description":"UDCString00321",
+               "type":"open_file",
+               "location": "\"%INSTALLDIR_X86%/SJP4500fn1_warranty-legal_%LANG_CODE%.pdf\"",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":true
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR_X86%/SJP4500fn1_warranty-legal_%LANG_CODE%.pdf",
+                     "condition":true
+                  }
+               ]
+            }, 
+            {
+               "id":"UDC_Help_UserGuideDataPath",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/UserGuide.png",
+               "title":"UDCString00324",
+               "description":"UDCString00325",
+               "type":"open_file",
+               "location": "\"%HELP_DATA%/Help/%LANG_ID%/IT310_use_help.chm\"",
+               "reqArray":[
+                  {
+                     "type":"file_exist",
+                     "id":"%HELP_DATA%/Help/%LANG_ID%/IT310_use_help.chm",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Help_WarrantyGuideDataPath",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/WarrantyLegalGuide.png",
+               "title":"UDCString00326",
+               "description":"UDCString00327",
+               "type":"open_file",
+               "location": "\"%HELP_DATA%/Help/%LANG_ID%/IT310_wlg_help.chm\"",
+               "reqArray":[
+                  {
+                     "type":"file_exist",
+                     "id":"%HELP_DATA%/Help/%LANG_ID%/IT310_wlg_help.chm",
+                     "condition":true
+                  }
+               ]
+            },			
+            {
+               "id":"UDC_Help_SetupGuide",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/HWSetupGuide.png",
+               "title":"UDCString00300",
+               "description":"UDCString00301",
+               "type":"local",
+               "location":"\"%INSTALLDIR%/HWSetup.exe\" /flow standalone",
+               "reqArray":[
+                  
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR%/HWSetup.exe",
+                     "condition":true
+                  }
+               ]
+            },
+            
+            {
+               "id":"UDC_Help_ProdSupport",
+               "IsAvailable" : true,
+               "image":"./UDC_files/taskImg/productwebpage.png",
+               "title":"UDCString00061",
+               "description":"UDCString00062",
+               "type":"link",
+               "location":"%url_prodsupport_%LANG_ID%%",
+               "reqArray":[]
+            },
+            {
+               "id":"UDC_Help_HowDoI32",
+               "IsAvailable" : true,
+               "image":"./UDC_files/taskImg/HowDoI.png",
+               "title":"UDCString00104",
+               "description":"UDCString00105",
+               "type":"local",
+               "location":"\"%INSTALLDIR%\\HelpViewer\\hpqlpvwr.exe\" /file-name=howdoi.html /deviceID %DEVICE_ID%",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":false
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR%\\HelpViewer\\hpqlpvwr.exe",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Help_HowDoI64",
+               "IsAvailable" : true,
+               "image":"./UDC_files/taskImg/HowDoI.png",
+               "title":"UDCString00104",
+               "description":"UDCString00105",
+               "type":"local",
+               "location":"\"%INSTALLDIR%\\HelpViewer\\hpqlpvwr.exe\" /file-name=howdoi.html /deviceID %DEVICE_ID%",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":true
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR%\\HelpViewer\\hpqlpvwr.exe",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Help_CPGuide32",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/printer-control-panel-guide.png",
+               "title":"UDCString00106",
+               "description":"UDCString00107",
+               "type":"local",
+               "location":"\"%INSTALLDIR%\\HelpViewer\\hpqlpvwr.exe\" /file-name=controlpanelguide.html /deviceID %DEVICE_ID%",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":false
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR%\\HelpViewer\\hpqlpvwr.exe",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Help_CPGuide64",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/printer-control-panel-guide.png",
+               "title":"UDCString00106",
+               "description":"UDCString00107",
+               "type":"local",
+               "location":"\"%INSTALLDIR%\\HelpViewer\\hpqlpvwr.exe\" /file-name=controlpanelguide.html /deviceID %DEVICE_ID%",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":true
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR%\\HelpViewer\\hpqlpvwr.exe",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Help_WebReg",
+               "IsAvailable" : true,
+               "image":"./UDC_files/taskImg/webreg.png",
+               "title":"UDCString00071",
+               "description":"UDCString00072",
+               "type":"link",
+               "location":"https://register.hp.com?cc=%COUNTRY%&lang=%2LETTERS_LANG_CODE%",
+               "reqArray":[]
+            },
+            {
+               "id":"UDC_Help_Wireless",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/wireless.png",
+               "title":"UDCString00097",
+               "description":"UDCString00098",
+               "type":"link",
+               "location":"%url_wirelessHelp_%LANG_ID%%",
+               "reqArray":[
+                  {
+                     "type":"networked",
+                     "condition":true
+                  },
+				  {
+                     "type":"wifi_supported",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Help_EcoTips",
+               "IsAvailable" : true,
+               "image":"./UDC_files/taskImg/ecotips.png",
+               "title":"UDCString00063",
+               "description":"UDCString00064",
+               "type":"link",
+               "location":"http://www.hp.com/hpinfo/globalcitizenship/environment/",
+               "reqArray":[]
+            },
+            {
+               "id":"UDC_Help_EcoSmartDesktop",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/EcoPrint.png",
+               "title":"UDCString00114",
+               "description":"UDCString00115",
+               "type":"link",
+               "location":"%url_ecosmart%",
+               "reqArray":[]
+            }
+         ]
+      },
+      {
+         "id":"UDCUtilPage",
+         "IsAvailable" : true,
+         "image":"./UDC_files/taskImg/Utilities_icon.png",
+         "img0":"./UDC_files/taskImg/Utilities_Normal_icon.png",
+         "img1":"./UDC_files/taskImg/Utilities_Highlighted_icon.png",
+         "img2":"./UDC_files/taskImg/Utilities_Disabled_icon.png",
+         "title":"UDCString00203",
+         "rollover_desc":"UDCString00299",
+         "tasklist_desc":"UDCString00203",
+         "type":"hasSubtasks",
+         "reqArray":[],
+         "subTasksArray":[
+            {
+               "id":"UDC_Util_Scan_Maintain32",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/scan_maintenance.png",
+               "title":"UDCString00025",
+               "description":"UDCString00026",
+               "type":"local",
+               "location":"\"%INSTALLDIR%/Scan2LsAppIT310.exe\"",
+               "reqArray":[
+                   {
+                      "type":"64bitOS",
+                      "condition":false
+                   },
+                   {
+                      "type":"file_exist",
+                      "id":"%INSTALLDIR%/Scan2LsAppIT310.exe",
+                      "condition":true
+                   }
+               ]
+            },         
+            {
+               "id":"UDC_Util_Scan_Maintain64",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/scan_maintenance.png",
+               "title":"UDCString00025",
+               "description":"UDCString00026",
+               "type":"local",
+               "location":"\"%INSTALLDIR_X86%/Scan2LsAppIT310.exe\"",
+               "reqArray":[
+                   {
+                      "type":"64bitOS",
+                      "condition":true
+                   },
+                   {
+                      "type":"file_exist",
+                      "id":"%INSTALLDIR_X86%/Scan2LsAppIT310.exe",
+                      "condition":true
+                   }
+               ]
+            },         
+            {
+               "id":"UDC_Util_Setup",
+               "IsAvailable" : true,
+               "image":"./UDC_files/taskImg/PrinterSetup.png",
+               "title":"UDCString00302",
+               "description":"UDCString00303",
+               "type":"local",
+               "location":"\"%INSTALLDIR%/USBSetupLauncher.exe\"",
+                              "reqArray":[
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR%/USBSetupLauncher.exe",
+                                          "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Util_HPUpdate32",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/hpupdate.png",
+               "title":"UDCString00065",
+               "description":"UDCString00066",
+               "type":"local",
+               "location":"\"%ProgramFiles%/HP/HP Software Update/hpwucli.exe\"",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":false
+                  },
+                  {
+                     "type":"reg_match",
+                     "id":"HKLM\\SOFTWARE\\Hewlett-Packard\\HP Software Update\\launchFile",
+                     "value":"HPWUCli.exe",
+                     "condition":true
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%ProgramFiles%/HP/HP Software Update/hpwucli.exe",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Util_HPUpdate64",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/hpupdate.png",
+               "title":"UDCString00065",
+               "description":"UDCString00066",
+               "type":"local",
+               "location":"\"%ProgramFiles(x86)%/HP/HP Software Update/hpwucli.exe\"",
+               "reqArray":[
+                  {
+                     "type":"64bitOS",
+                     "condition":true
+                  },
+                  {
+                     "type":"reg_match",
+                     "id":"HKLM\\SOFTWARE\\Wow6432Node\\Hewlett-Packard\\HP Software Update\\launchFile",
+                     "value":"HPWUCli.exe",
+                     "condition":true
+                  },
+                  {
+                     "type":"file_exist",
+                     "id":"%ProgramFiles(x86)%/HP/HP Software Update/hpwucli.exe",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Util_PsDr",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/psdr.png",
+               "title":"UDCString00308",
+               "description":"UDCString00309",
+               "type":"link",
+               "location":"%url_pdu_%LANG_ID%%",
+               "reqArray":[]
+            },
+			{
+               "id":"UDC_Util_PsDrExe",
+               "IsAvailable" : true,
+               "image":"./UDC_files/taskImg/psdr.png",
+               "title":"UDCString00308",
+               "description":"UDCString00309",
+               "type":"local",
+               "location":"\"%INSTALLDIR%/HPPSDrDownloader.exe\" -devid %DEVICE_ID%",
+               "reqArray":[
+                    {
+                       "type":"file_exist",
+                       "id":"%INSTALLDIR%/HPPSDrDownloader.exe",
+                       "condition":true
+                    }
+			   ]
+            },
+            {
+               "id":"UDC_Util_UpdateIP",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/UpdateIP.png",
+               "title":"UDCString00304",
+               "description":"UDCString00305",
+               "type":"local",
+               "location":"\"%INSTALLDIR%/DeviceSetupLauncher.exe\" /changeip \"\"",
+               "reqArray":[
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR%/DeviceSetupLauncher.exe",
+                     "condition":true
+                  },
+                  {
+                     "type":"networked",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Util_ProductStudy",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/Ust.png",
+               "title":"UDCString00306",
+               "description":"UDCString00307",
+               "type":"local",
+               "location":"\"%INSTALLDIR%/HPCustPartic.exe\" /changesettings /UA 20",
+               "reqArray":[
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR%/HPCustPartic.exe",
+                     "condition":true
+                  }
+               ]
+            },
+            {
+               "id":"UDC_Util_OptinManager",
+               "IsAvailable" : true,
+               "image":"./UDC_files/taskImg/Ust.png",
+               "title":"UDCString00306",
+               "description":"UDCString00307",
+               "type":"optinManager",
+               "reqArray":[],
+               "checkboxesArray": [
+                {
+                    "id": "UDC_Optin_UsageData",
+                    "IsAvailable": true,
+                    "title": "UDCString00334",
+                    "description": "UDCString00335",
+					"location":"\"%INSTALLDIR%/HPCustPartic.exe\" /changesettings /UA 20",
+                    "query": 
+                    {
+                           "type":"xml_query",
+                           "id":"%DEVICE_DATA%../../PDSMQ/PdsmqLocalSettings.xml",
+                           "node":"//*[local-name()=\\'PdsmqConfig\\']//*[local-name()=\\'UserOptIn\\']",
+                           "value":"True"
+                    },
+                    "checkedAction": { 
+                           "type":"xml_write",
+                           "id":"%DEVICE_DATA%../../PDSMQ/PdsmqLocalSettings.xml",
+                           "node":"//*[local-name()=\\'PdsmqConfig\\']//*[local-name()=\\'UserOptIn\\']",
+                           "value":"True"
+                    },
+                    "uncheckedAction": { 
+                           "type":"xml_write",
+                           "id":"%DEVICE_DATA%../../PDSMQ/PdsmqLocalSettings.xml",
+                           "node":"//*[local-name()=\\'PdsmqConfig\\']//*[local-name()=\\'UserOptIn\\']",
+                           "value":"False"
+                    }
+                }
+                ],
+				"subTasksArray":[
+				{
+				   "IsAvailable" : true,
+				   "image":"./UDC_files/taskImg/UserGuide.png",
+				   "title":"UDCString00336",
+				   "description":"UDCString_Blank",
+				   "type":"local",
+				   "location":"\"%DEVICE_DATA%../MoreInfo/%LANG_ID%.htm\"",
+				   "reqArray":[
+						{
+						 "type":"file_exist",
+						 "id":"%DEVICE_DATA%../MoreInfo/%LANG_ID%.htm",
+						 "condition":true
+						}
+					]
+				},
+				{
+				   "IsAvailable" : true,
+				   "image":"./UDC_files/taskImg/WarrantyLegalGuide.png",
+				   "title":"UDCString00337",
+				   "description":"UDCString_Blank",
+				   "type":"link",
+				   "location":"http://www.hp.com/go/privacy",
+				   "reqArray":[]
+				}				
+				]				
+            },			
+            {
+               "id":"UDC_Util_AdvancedSettings",
+               "IsAvailable" : false,
+               "image":"./UDC_files/taskImg/StatusSettings.png",
+               "title":"UDCString00328",
+               "description":"UDCString00329",
+               "type":"local",
+               "location":"\"%INSTALLDIR%/Toolbox.exe\" %DEVICE_ID% /advancedsettings",
+               "reqArray":[
+                  {
+                     "type":"file_exist",
+                     "id":"%INSTALLDIR%/Toolbox.exe",
+                     "condition":true
+                  }
+               ]
+            }						
+         ]
+      },
+	  {
+         "id":"UDCQuietMode",
+         "IsAvailable" : true,
+		 "image":"./UDC_files/taskImg/QuietMode_icon.png",
+         "img0":"./UDC_files/taskImg/QuietMode_normal_icon.png",
+         "img1":"./UDC_files/taskImg/QuietMode_highlighted_icon.png",
+         "img2":"./UDC_files/taskImg/QuietMode_disabled_icon.png",
+         "title":"UDCString00314",
+         "rollover_desc":"UDCString00315",
+         "type":"local",
+         "location":"\"%INSTALLDIR%/Toolbox.exe\" %DEVICE_ID% /quietmode",
+         "reqArray":[
+            {
+                "type":"connected",
+                "condition":true
+            },
+			{
+				"type":"support_quiet_mode",
+				"condition":true
+			},
+            {
+                "type":"file_exist",
+                "id":"%INSTALLDIR%/Toolbox.exe",
+                "condition":true
+            }
+         ]
+      },
+      {
+         "id":"UDCInkDisplay",
+         "IsAvailable" : true,
+         "title":"UDCString00067",
+         "rollover_desc":"UDCString00068",
+         "type":"ink_level",
+         "location":"\"%INSTALLDIR%/Toolbox.exe\" %DEVICE_ID% /inkLevels",
+         "reqArray":[
+            {
+                "type":"connected",
+                "condition":true
+            },
+            {
+                "type":"file_exist",
+                "id":"%INSTALLDIR%/Toolbox.exe",
+                "condition":true
+            }
+         ]
+      }	        
+   ]
+}

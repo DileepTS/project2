@@ -1,0 +1,253 @@
+
+*%=================================================================*%
+*%             Copyright (c) Monotype Imaging Inc.                 *%
+*%                    All rights reserved.                         *%
+*%                                                                 *%
+*%                 Bidi Autoconfiguration File                     *%
+*%   Generated from a UPDF specification using the UPDF Tool.      *%
+*%=================================================================*%
+
+
+*%=================================================================*%
+*%======================   Version 3.0   ==========================*%
+*%=================================================================*%
+
+*%=================================================================*%
+*%     OptionalTray2
+*%=================================================================*%
+
+*Feature: InstallableTray2 {
+
+    *FeatureType: PRINTER_PROPERTY
+    *BidiQuery: InstallableTray2 {
+        *QueryString: "\Printer.Layout.InputBins.Tray002:Installed"
+    } 
+
+    *BidiResponse: InstallableTray2 {
+        *ResponseType: BIDI_BOOL
+        *ResponseData: ENUM_OPTION (InstallableTray2)
+    }
+    *Option: NotInstalled {
+        *BidiValue: BOOL(FALSE)
+    }
+    *Option: Installed {
+        *BidiValue: BOOL(TRUE)
+    }
+
+}
+
+
+*%=================================================================*%
+*%     OptionalTray3
+*%=================================================================*%
+
+*Feature: OptionalTray3 {
+
+    *FeatureType: PRINTER_PROPERTY
+    *BidiQuery: OptionalTray3 {
+        *QueryString: "\Printer.Layout.InputBins.Tray003:Installed"
+    } 
+
+    *BidiResponse: OptionalTray3 {
+        *ResponseType: BIDI_BOOL
+        *ResponseData: ENUM_OPTION (OptionalTray3)
+    }
+    *Option: NotInstalled {
+        *BidiValue: BOOL(FALSE)
+    }
+    *Option: Installed {
+        *BidiValue: BOOL(TRUE)
+    }
+
+}
+
+*%=================================================================*%
+*%     OptionalTray4
+*%=================================================================*%
+
+*Feature: OptionalTray4 {
+
+    *FeatureType: PRINTER_PROPERTY
+    *BidiQuery: OptionalTray4 {
+        *QueryString: "\Printer.Layout.InputBins.Tray005:Installed"
+    } 
+
+    *BidiResponse: OptionalTray4 {
+        *ResponseType: BIDI_BOOL
+        *ResponseData: ENUM_OPTION (OptionalTray4)
+    }
+    *Option: NotInstalled {
+        *BidiValue: BOOL(FALSE)
+    }
+    *Option: Installed {
+        *BidiValue: BOOL(TRUE)
+    }
+
+}
+
+*%=================================================================*%
+*%     OptionalTray5
+*%=================================================================*%
+
+*Feature: OptionalTray5 {
+
+    *FeatureType: PRINTER_PROPERTY
+    *BidiQuery: OptionalTray5 {
+        *QueryString: "\Printer.Layout.InputBins.Tray006:Installed"
+    } 
+
+    *BidiResponse: OptionalTray5 {
+        *ResponseType: BIDI_BOOL
+        *ResponseData: ENUM_OPTION (OptionalTray5)
+    }
+    *Option: NotInstalled {
+        *BidiValue: BOOL(FALSE)
+    }
+    *Option: Installed {
+        *BidiValue: BOOL(TRUE)
+    }
+
+}
+
+*%=================================================================*%
+*%     OptionalTray6
+*%=================================================================*%
+
+*Feature: OptionalTray6 {
+
+    *FeatureType: PRINTER_PROPERTY
+    *BidiQuery: OptionalTray6 {
+        *QueryString: "\Printer.Layout.InputBins.Tray007:Installed"
+    } 
+
+    *BidiResponse: OptionalTray6 {
+        *ResponseType: BIDI_BOOL
+        *ResponseData: ENUM_OPTION (OptionalTray6)
+    }
+    *Option: NotInstalled {
+        *BidiValue: BOOL(FALSE)
+    }
+    *Option: Installed {
+        *BidiValue: BOOL(TRUE)
+    }
+
+}
+
+*%=================================================================*%
+*%     OptionalEnvFeeder
+*%=================================================================*%
+
+*Feature: OptionalEnvFeeder {
+
+    *FeatureType: PRINTER_PROPERTY
+    *BidiQuery: OptionalEnvFeeder {
+        *QueryString: "\Printer.Layout.InputBins.Tray004:Installed"
+    } 
+
+    *BidiResponse: OptionalEnvFeeder {
+        *ResponseType: BIDI_BOOL
+        *ResponseData: ENUM_OPTION (OptionalEnvFeeder)
+    }
+    *Option: NotInstalled {
+        *BidiValue: BOOL(FALSE)
+    }
+    *Option: Installed {
+        *BidiValue: BOOL(TRUE)
+    }
+
+}
+
+*%=================================================================*%
+*%     DuplexUnit
+*%=================================================================*%
+
+*Feature: DuplexUnit {
+
+    *FeatureType: PRINTER_PROPERTY
+    *BidiQuery: DuplexUnit {
+        *QueryString: "\Printer.Configuration.DuplexUnit:Installed"
+    } 
+
+    *BidiResponse: DuplexUnit {
+        *ResponseType: BIDI_BOOL
+        *ResponseData: ENUM_OPTION (DuplexUnit)
+    }
+    *Option: NotInstalled {
+        *BidiValue: BOOL(FALSE)
+    }
+    *Option: Installed {
+        *BidiValue: BOOL(TRUE)
+    }
+
+}
+
+*%******************************************************************************
+*%                            PhotoTray unit
+*%******************************************************************************
+
+*Feature: PhotoTrayUnit
+{
+    *FeatureType: PRINTER_PROPERTY
+    *BidiQuery: PhotoTrayUnit
+    {
+         *QueryString: "\Printer.Layout.InputBins.PhotoTrayUnit002:Installed"
+    }
+
+    *BidiResponse: PhotoTrayUnit
+    {
+         *ResponseType: BIDI_BOOL
+         *ResponseData: ENUM_OPTION(PhotoTrayUnit)
+    }
+
+    *Option: FALSE
+    {
+         *BidiValue: BOOL(FALSE)
+    }
+
+    *Option: TRUE
+    {
+         *BidiValue: BOOL(TRUE)
+    }
+}
+
+
+*%=================================================================*%
+*%     AccessoryOutputBin
+*%=================================================================*%
+*Feature: AccessoryOutputBin {
+
+    *FeatureType: PRINTER_PROPERTY
+    *BidiQuery: AccessoryOutputBin {
+        *QueryString: "\Printer.Finishing:ConvertMode"
+    }
+    *BidiResponse: AccessoryOutputBin {
+    
+        *ResponseType: BIDI_STRING
+        *ResponseData: ENUM_OPTION (AccessoryOutputBin)
+    }
+    
+    *Option: HP500SheetStaplerStackerF2G72A {
+        *BidiValue: STRING("HP LaserJet 500-Sheet Stapler/Stacker F2G72A")
+    }
+
+    *Option: HP500SheetStackerF2G71A {
+        *BidiValue: STRING("HP LaserJet 500-Sheet Stacker F2G71A")
+    }
+
+    *Option: HP5BinMailboxF2G81A {
+        *BidiValue: STRING("HP LaserJet 500-Sheet 5-Bin Mailbox F2G81A")
+    }
+
+    *Option: HP5BinStackerF2G81A {
+        *BidiValue: STRING("HP LaserJet 500-Sheet 5-Bin Stacker F2G81A")
+    }
+
+    *Option: HP5BinJobSeperatorF2G81A {
+        *BidiValue: STRING("HP LaserJet 500-Sheet 5-Bin Job Separator F2G81A")
+    }
+
+    *Option: HP5BinCollatorF2G81A {
+        *BidiValue: STRING("HP LaserJet 500-Sheet 5-Bin Collator F2G81A")
+    }
+
+}

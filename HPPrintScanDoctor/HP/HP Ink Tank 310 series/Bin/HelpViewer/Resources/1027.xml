@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <String ID="1" Value="Endarrere"/>
+  <String ID="2" Value="Endavant"/>
+  <String ID="3" Value="Inici"/>
+  <String ID="4" Value="Imprimir aquest tema"/>
+  <String ID="5" Value="Cercar resultats per"/>
+  <String ID="6" Value="Adreces d'interès&#xA;"/>
+  <String ID="7" Value="Cercar"/>
+  <String ID="8" Value="Insertar terme per cercar..."/>
+  <String ID="9" Value="Visualitzador"/>
+  <String ID="10" Value="Veure també"/>
+  <String ID="11" Value="Continguts"/>
+  <String ID="12" Value="Nom nou"/>
+  <String ID="13" Value="D'acord"/>
+  <String ID="14" Value="Cancel.lar"/>
+  <String ID="15" Value="Tancar"/>
+  <String ID="16" Value="Maximitzar"/>
+  <String ID="17" Value="Minimitzar"/>
+  <String ID="18" Value="Com puc...?"/>
+  <String ID="19" Value="Obrir"/>
+  <String ID="20" Value="Suprimir"/>
+  <String ID="21" Value="Canviar el nom"/>
+  <String ID="22" Value="Les meves adreces d'interès:"/>
+  <String ID="23" Value="Tema de les adreces d'interès"/>
+  <String ID="24" Value="Resultats locals..."/>
+  <String ID="25" Value="Resultats en línia..."/>
+  <String ID="26" Value="Resultats locals i en línia..."/>
+  <String ID="27" Value="Visualitzador de l'ajuda d'HP"/>
+  <String ID="28" Value="Benvinguts al visualitzador de l'ajuda d'HP."/>
+  <String ID="29" Value="Insertar un terme de cerca dalt, per trobar ajuda per al producte."/>
+  <String ID="30" Value="Impossible de connectar a Internet."/>
+  <String ID="31" Value="No s'ha trobat cap resultat per"/>
+  <String ID="32" Value="Ampliar"/>
+  <String ID="33" Value="Contreure"/>
+  <String ID="34" Value="Restaurar"/>
+  <String ID="35" Value="Un moment per favor..."/>
+  <String ID="36" Value="Indexació dels fitxers.Aquesta operació pot durar una estona, en funció de la velocitat del sistema."/>
+  <String ID="37" Value="Ajuda"/>
+  <String ID="38" Value="Ja existeix una adreça d'interès per aquest element.Voleu sobreescriure-la?"/>
+  <String ID="39" Value="Esteu segurs de voler suprimir?"/>
+  <String ID="40" Value="Seleccionar tot"/>
+  <String ID="41" Value="Visualitzar l'orige"/>
+  <String ID="42" Value="Imprimir..."/>
+  <String ID="43" Value="Actualitzar"/>
+  <String ID="44" Value="Propietats"/>
+  <String ID="51" Value="Opcions de cerca"/>
+  <String ID="52" Value="Redimensionar"/>
+  <String ID="53" Value="Una adreça d'interès amb aquest nom ja existeix.Seleccioneu un nom diferent."/>
+  <String ID="54" Value="Imprimir"/>
+  <String ID="55" Value="Tallar"/>
+  <String ID="56" Value="Copiar"/>
+  <String ID="57" Value="Pegar"/>
+  <String ID="58" Value="Suprimir"/>
+  <String ID="59" Value="Iniciar l'ajuda d'HP"/>
+  <String ID="60" Value="Incloure resultats en línia"/>
+  <String ID="61" Value="Obtenir ajuda específica del producte per detectar i solucionar problemes. "/>
+  <String ID="62" Value="Haveu d'instalar l'ajuda electrònica per veure el contingut de l'ajuda ací.Obtindre información sobre l'ús, les funcions, la resolució de problemes, les notícies, la normativa y el medi ambient de la impressora, així com informació de suport des de l'ajuda electrònica."/>
+  <String ID="63" Value="Podeu instal.lar l'ajuda electrònica desde el CD de software HP o la pàgina web de suport:"/>
+  <String ID="64" Value="Per instalar des del CD de software d'HP, inserteu el CD i comenceu a instalar el software."/>
+  <String ID="65" Value="Per Instal·lar desde la pàgina weg de suport, visiteu &lt;a href=&quot;[hub_url]&quot;>hp.com/support&lt;/a>, i després descarregueu el software &quot;Controladors i software amb totes les funcions&quot;."/>
+  <String ID="66" Value="Quan vegeu software recomanat a la pantalla, asegureu-vos de que l'opció “Ajuda de [prodName]” està seleccionada."/>
+</strings>

@@ -1,0 +1,10 @@
+{
+   "localization":"./UDC_files/localize_%LANG_ID%.json",
+   "device_file":"%DEVICE_DATA%/UDC_device.json",
+   "CRMdownloadFolder":"%DEVICE_DATA%/CRM/",
+   "CRM":"Hide",
+   "StartWidth":1024,
+   "StartHeight":750,
+   "StartWidth_LargeText":1500,
+   "StartHeight_LargeText":925
+}
